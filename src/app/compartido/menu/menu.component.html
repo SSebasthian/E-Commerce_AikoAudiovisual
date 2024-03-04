@@ -1,1 +1,35 @@
-<p>menu works!</p>
+<div class="contenedor-cabeza-menu">
+    <div class="cabeza-menu">
+
+        <div class="contenedor-buscar">
+            <form class="formulario-buscar">
+                <button class="btn-buscar">
+                    <mat-icon id="icono-Buscar">search</mat-icon>
+                </button>
+            </form>
+        </div> 
+
+        <div class="contenedor-logo">
+            <img src="../../../assets/imagenes/logo-texto.png" alt="Aiko Audiovisual">
+        </div>
+
+        <div class="contenedor-usuario">
+            <mat-icon [routerLink]="['/acceso']">person</mat-icon>
+            <mat-icon [routerLink]="['/carrito']">shopping_cart</mat-icon>
+            <div class="carrito-contador" [routerLink]="['/carrito']">
+                <span class="numero">(0)</span>
+            </div>
+        </div>
+    </div>
+</div> 
+
+<div class="contenedor-menu">
+    <nav class="menu">
+        <div id="seleccion"></div>
+        <a [routerLink]="['/inicio']" routerLinkActive="activa">INICIO</a>
+        <a [routerLink]="['/servicio']" routerLinkActive="activa">SERVICIOS</a>
+        <a [routerLink]="['/producto']" routerLinkActive="activa">PRODUCTOS</a>
+        <a [routerLink]="['/contacto']" routerLinkActive="activa">CONTACTO</a>
+        
+    </nav>
+</div>

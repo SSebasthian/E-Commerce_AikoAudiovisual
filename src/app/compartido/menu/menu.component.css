@@ -1,0 +1,124 @@
+
+/* ********************************** */
+/*               HEADER               */
+/* ********************************** */
+
+.contenedor-cabeza-menu {
+	width: 90%;
+	margin: auto;
+}
+
+
+.cabeza-menu {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.contenedor-buscar {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+}
+.contenedor-buscar button{
+	background-color: transparent;
+    border: none;
+	cursor: pointer;
+}
+
+
+.contenedor-logo {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding-left: 100px;
+}
+
+.contenedor-logo img {
+	position: relative;
+	width: 300px;
+	right: 30px;
+}
+
+.contenedor-usuario {
+	display: flex;
+	gap: 1rem;
+	cursor: pointer;
+}
+
+.contenedor-usuario .carrito-contador {
+	display: flex;
+	flex-direction: column;
+} 
+
+
+
+/* ************* NAVBAR ************* */
+
+.contenedor-menu{
+	position: block;
+	top: 0;
+	width: 90%;
+	border-radius: 15px 15px 50px 50px;
+	margin: auto;
+	background: #9500F4;
+	padding: 10px 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+}
+
+
+.contenedor-menu .menu{
+	display: flex;
+  	gap: 10px;
+	height: 30px;
+}
+ 
+.contenedor-menu .menu a{
+	position: relative;
+	text-decoration: none;
+	padding: 12px 20px;
+	color: #fff;
+	letter-spacing: 0.1em;
+	font-weight: 400;
+}
+
+.contenedor-menu .menu a:hover{
+	color: #000;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
+.contenedor-menu .menu .activa{
+	width: 100px;
+	height: 17px;
+	color: #000;
+	background: #fff;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
+.contenedor-menu .menu .activa::before{
+	content: '';
+	position: absolute;
+	bottom: 0px;
+	left: -30px;
+	width: 30px;
+	height: 25px;
+	background: transparent;
+	border-bottom-right-radius: 20px;
+	box-shadow: 5px 5px 0 5px #fff;
+}
+.contenedor-menu .menu .activa::after{
+	content: '';
+	position: absolute;
+	bottom: 0px;
+	right: -30px;
+	width: 30px;
+	height: 25px;
+	background: transparent;
+	border-bottom-left-radius: 20px;
+	box-shadow: -5px 5px 0 5px #fff;
+} 1
