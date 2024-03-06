@@ -8,24 +8,27 @@
 	margin: auto;
 }
 
-
 .cabeza-menu {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
+/* CONTENEDOR BUSCAR */
+
 .contenedor-buscar {
 	display: flex;
 	align-items: center;
 	gap: 2rem;
 }
+
 .contenedor-buscar button{
 	background-color: transparent;
     border: none;
 	cursor: pointer;
 }
 
+/* CONTENEDOR LOGO */
 
 .contenedor-logo {
 	display: flex;
@@ -40,6 +43,8 @@
 	right: 30px;
 }
 
+/* CONTENEDOR REGISTRO Y CARRITO */
+
 .contenedor-usuario {
 	display: flex;
 	gap: 1rem;
@@ -52,8 +57,11 @@
 } 
 
 
+/* ************************************ */
+/*               MENU                   */
+/* ************************************ */
 
-/* ************* NAVBAR ************* */
+/* DISEÑO GLOBAL MENU */
 
 .contenedor-menu{
 	position: block;
@@ -68,7 +76,6 @@
 	align-items: center;
 	z-index: 1;
 }
-
 
 .contenedor-menu .menu{
 	display: flex;
@@ -85,11 +92,15 @@
 	font-weight: 400;
 }
 
+/* DISEÑO HOVER MENU */
+
 .contenedor-menu .menu a:hover{
 	color: #000;
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
 }
+
+/* DISEÑO PAGINA ACTIVA MENU */
 
 .contenedor-menu .menu .activa{
 	width: 100px;
@@ -111,6 +122,7 @@
 	border-bottom-right-radius: 20px;
 	box-shadow: 5px 5px 0 5px #fff;
 }
+
 .contenedor-menu .menu .activa::after{
 	content: '';
 	position: absolute;
@@ -121,4 +133,154 @@
 	background: transparent;
 	border-bottom-left-radius: 20px;
 	box-shadow: -5px 5px 0 5px #fff;
-} 1
+} 
+
+/* ELIMINAR COMPONENTES ACTIVOS PARA USARLOS EN RESPONSIVE */
+
+#menu-responsive,
+#menu-icon-hamburguesa{ /* CHECKBOX Y MENU HAMBURGUESA */
+	cursor: pointer;
+	display: none;
+}
+.contenedor-menu .menu a mat-icon{ /* ICONOS OPCIONES MENU */
+	display: none;
+}
+.contenedor-logo .logo-blanco{ /* IMAGEN RESONSIVE */
+	display: none;
+}
+
+
+/* ************************************ */
+/*           MENU RESPONSIVE            */
+/* ************************************ */
+
+/* DISEÑO EN 700 PIXELES CELULAR */
+
+@media screen and (max-width: 700px) {
+
+	/* SE ACTIVA ICONO HAMBURGUESA */
+
+	#menu-icon-hamburguesa{
+		display: inline;
+		right: 20px;
+		position: relative;
+	}
+
+	/* DISEÑO MENU RESPONSIVE */
+
+	.contenedor-cabeza-menu {
+		width: 100%;
+		height: 70px;
+		margin: auto;
+		position: fixed;
+		z-index: 2;
+		background: #6433DB;
+	}
+	
+	.cabeza-menu {
+		display: flex;
+		position: relative;
+	}
+	
+	.contenedor-buscar {
+		position: absolute;
+		right: 140px;
+		width: 30px;
+	}
+	
+	.contenedor-logo {
+		position: relative;
+		left: -20px;
+	}
+	
+	.contenedor-logo img {
+		width: 190px;
+		right: 70px;
+	}
+
+	.contenedor-logo .logo-negro{
+		display: none;
+	}
+
+	.contenedor-logo .logo-blanco{
+		display: inline;
+	}
+	
+	.contenedor-usuario {
+		position: absolute;
+		right: 60px;
+	}
+	
+	.contenedor-usuario .carrito-contador {
+		display: none;
+
+	} 
+	.cabeza-menu mat-icon{
+		font-size: 26px;
+		color: #fff;
+	}
+	
+	/* MENU RESPONSIVE CONTENEDORES */
+
+	.contenedor-menu{
+		top: -100%;
+		position: fixed;
+		width: 75%;
+		height: 100vh;
+		background: #6433DB;	
+		transition: all .7s;	
+	}
+	
+	.menu-abierto{
+		top: 0;
+	}
+	
+	.contenedor-menu .menu{
+		display: grid;
+		width: 100%;
+		padding-top: -90px;
+		margin: 0;
+		height: 70vh;
+	}
+	 
+	.contenedor-menu .menu a{
+		margin: auto;
+		width: 90%;
+		padding: 12px 20px;
+		margin: 0;
+		text-align: left;
+	}
+
+	.contenedor-menu .menu a mat-icon{
+		display: inline;
+		position: relative;
+		top: 10px;
+		right: 10px;
+		font-size: 30px;
+	}
+		
+	.contenedor-menu .menu a:hover,
+	.contenedor-menu .menu a:hover mat-icon
+	{
+		color: #000;
+	}
+
+	.contenedor-menu .menu .activa,
+	.contenedor-menu .menu .activa mat-icon
+	{
+		width: 91%;
+		height: 50px;
+		color: #000;
+		background: #fff;
+		border-radius: 10px;
+	}
+	
+	.contenedor-menu .menu .activa::before{
+		display: none;
+	}
+
+	.contenedor-menu .menu .activa::after{
+		display: none;
+	} 
+}
+

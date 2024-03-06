@@ -1,35 +1,56 @@
 <div class="contenedor-cabeza-menu">
+
+    <!-- ------------------------------- -->
+    <!--             HEADER              -->
+    <!-- ------------------------------- -->
+
     <div class="cabeza-menu">
 
+        <!-- HEADER ICONO BUSQUEDA -->
         <div class="contenedor-buscar">
             <form class="formulario-buscar">
                 <button class="btn-buscar">
-                    <mat-icon id="icono-Buscar">search</mat-icon>
+                    <mat-icon id="icono-Buscar">search</mat-icon> <!--  ICON BUSCAR -->
                 </button>
             </form>
         </div> 
 
+        <!-- HEADER IMAGEN LOGO -->
         <div class="contenedor-logo">
-            <img src="../../../assets/imagenes/logo-texto.png" alt="Aiko Audiovisual">
+            <img src="../../../assets/imagenes/logo-text-negro.png" alt="Aiko Audiovisual" class="logo-negro">  <!-- LOGO MENU PRINCIPAL -->
+            <img src="../../../assets/imagenes/logo-text-blanco.png" alt="Aiko Audiovisual" class="logo-blanco"> <!-- LOGO MENU RESPONSIVE -->
         </div>
 
+        <!-- HEADER ICONO REGISTRO Y CARRITO -->
         <div class="contenedor-usuario">
-            <mat-icon [routerLink]="['/acceso']">person</mat-icon>
-            <mat-icon [routerLink]="['/carrito']">shopping_cart</mat-icon>
-            <div class="carrito-contador" [routerLink]="['/carrito']">
-                <span class="numero">(0)</span>
+            <mat-icon [routerLink]="['/acceso']">person</mat-icon> <!--  ICONO REGISTRO -->
+            <mat-icon [routerLink]="['/carrito']">shopping_cart</mat-icon> <!-- ICONO CARRITO -->
+            <div class="carrito-contador" [routerLink]="['/carrito']"> 
+                <span class="numero">(0)</span> <!--  CONTADOR PRODUCTO EN CARRITO -->
             </div>
         </div>
+
+        <!-- CHECKBOX ICON HAMBURGUESA PARA MENU RESPONSIVE -->
+        <input type="checkbox" id="menu-responsive" (change)="cambioMenuResponsive()">
+        <label for="menu-responsive" id="menu-icon-hamburguesa">
+            <mat-icon>menu</mat-icon>
+        </label>
+
     </div>
 </div> 
 
-<div class="contenedor-menu">
+    <!-- ------------------------------- -->
+    <!--             MENU              -->
+    <!-- ------------------------------- -->
+
+
+    <div class="contenedor-menu" [class.menu-abierto]="menuAbierto"> <!-- SEGUN EL CAMBIO DEL CHECKBOX VERDADERO SE CREA ESTA CLASE -->
     <nav class="menu">
         <div id="seleccion"></div>
-        <a [routerLink]="['/inicio']" routerLinkActive="activa">INICIO</a>
-        <a [routerLink]="['/servicio']" routerLinkActive="activa">SERVICIOS</a>
-        <a [routerLink]="['/producto']" routerLinkActive="activa">PRODUCTOS</a>
-        <a [routerLink]="['/contacto']" routerLinkActive="activa">CONTACTO</a>
-        
+        <!-- SE CREA MENU CON ICONO PARA RESPONSIVE -->
+        <a [routerLink]="['/inicio']" routerLinkActive="activa"><mat-icon>home</mat-icon>INICIO</a>
+        <a [routerLink]="['/servicio']" routerLinkActive="activa"><mat-icon>style</mat-icon>SERVICIOS</a>
+        <a [routerLink]="['/producto']" routerLinkActive="activa"><mat-icon>widgets</mat-icon>PRODUCTOS</a>
+        <a [routerLink]="['/contacto']" routerLinkActive="activa"><mat-icon> contacts</mat-icon>CONTACTO</a>
     </nav>
 </div>
