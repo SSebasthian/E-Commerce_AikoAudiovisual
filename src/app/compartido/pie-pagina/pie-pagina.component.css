@@ -176,3 +176,49 @@ footer .contenedor .opcionesCategoria ul li a:hover{
     left: -15px;
 }
 
+
+/* ************************************ */
+/*           MENU RESPONSIVE            */
+/* ************************************ */
+
+/* DISEÑO EN 700 PIXELES CELULAR */
+
+@media screen and (max-width: 700px) {
+    .contenedor-footer{
+        position: relative;
+        top: 40px;
+    }
+    .borde{
+        position: relative;
+        top: 40px;
+    }
+
+    footer{
+        padding: 40px;
+    }
+
+    footer .contenedor{
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+    }
+    footer .contenedor .opcionesCategoria ul li a{
+        font-size: 18px;
+    }
+    footer .contenedor .opcionesCategoria ul li{
+        left: -35px;
+    }
+    footer .contenedor .seccion p{
+        font-size: 20px;
+        position: relative;
+        top: -228px;
+    }
+    .logo-icon-blanco{
+        width: 150px;
+        position: relative;
+        top: 15px;
+    } 
+    .redes ul{
+        font-size: 40px;
+        top: -65px;
+    }
+}
