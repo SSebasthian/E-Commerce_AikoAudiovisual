@@ -1,1 +1,77 @@
-<p>pie-pagina works!</p>
+<div class="borde"></div>
+<div class="contenedor-footer">
+
+    <!-- ------------------------------- -->
+    <!--             FOOTER              -->
+    <!-- ------------------------------- -->
+
+
+    <footer>
+        <div class="contenedor">
+
+            <!-- FOOTER IMAGEN LOGO -->
+            <div class="seccion">
+                <img 
+                    src="../../../assets/imagenes/logo-icon-blanco.png" 
+                    alt="Aiko Audiovisual" 
+                    class="logo-icon-blanco"
+                    [routerLink]="['/inicio']"
+                >
+                <p>AIKO AUDIOVISUAL</p>
+            </div>
+
+            <!-- FOOTER MENU -->
+            <div class="seccion opcionesCategoria">
+                <h2>MENU</h2>
+                <ul>
+                    <li><a [routerLink]="['/inicio']">Inicio</a></li>
+                    <li><a [routerLink]="['/carrito']">Carrito</a></li>
+                    <li><a [routerLink]="['/producto']">Productos</a></li>
+                    <li><a [routerLink]="['/servicio']">Servicios</a></li>
+                    <li><a [routerLink]="['/contacto']">Contacto</a></li>
+                </ul>
+            </div>
+
+            <!-- FOOTER SERVICIOS -->
+            <div class="seccion opcionesCategoria">
+                <h2>SERVICIOS</h2>
+                <ul>
+                    <li><a [routerLink]="['']">Ilustracion Editorial</a></li>
+                    <li><a [routerLink]="['']">Ilustracion Comercial</a></li>
+                    <li><a [routerLink]="['']">Diseño para Libros</a></li>
+                    <li><a [routerLink]="['']">Estampados</a></li>
+                    <li><a [routerLink]="['']">Murales</a></li>
+                    <li><a [routerLink]="['']">Diseño de Marca</a></li>
+                    <li><a [routerLink]="['']">Presentaciones</a></li>
+                </ul>
+            </div>
+
+            <!-- FOOTER POLITICAS -->
+            <div class="seccion opcionesCategoria">
+                <h2>POLITICAS</h2>
+                <ul>
+                    <li><a [routerLink]="['']">Politicas de Privacidad</a></li>
+                    <li><a [routerLink]="['']">Politicas de Reembolso</a></li>
+                    <li><a [routerLink]="['']">Termino de Envio</a></li>
+                    <li><a [routerLink]="['']">Terminos del servicio</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- FOOTER REDES -->
+<div class="redes">
+    <ul>
+        <li><a href="https://wa.link/i4t83x" target="_blank"><span class="whatsapp"></span></a></li>
+        <li><a href="https://www.instagram.com/aiko_audiovisual?igsh=MTF5cnMycHIxdGRzdw==" target="_blank"><span class="instagram"></span></a></li>
+        <li><a href="https://www.tiktok.com/@aikoaudiovisual?_t=8kUTUQe1nja&_r=1" target="_blank"><span class="tiktok"></span></a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=100071949642474&mibextid=ZbWKwL" target="_blank"><span class="facebook"></span></a></li>
+    </ul>
+</div>
+
+<!-- FOOTER COPYRIGHT -->
+<div class="copyrightText">
+    <p>© Copyright 2024 - Aiko Audiovisual</p>
+
+</div>
