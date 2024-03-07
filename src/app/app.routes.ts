@@ -8,6 +8,11 @@ import { CarritoComponent } from './pagina/carrito/carrito.component';
 import { AccesoComponent } from './pagina/autenticacion/acceso/acceso.component';
 import { RegistroComponent } from './pagina/autenticacion/registro/registro.component';
 import { Error404Component } from './pagina/error404/error404.component';
+import { PoliticaPrivacidadComponent } from './pagina/politicas/politica-privacidad/politica-privacidad.component';
+import { PoliticaReembolsoComponent } from './pagina/politicas/politica-reembolso/politica-reembolso.component';
+import { TerminosEnvioComponent } from './pagina/politicas/terminos-envio/terminos-envio.component';
+import { TerminosServicioComponent } from './pagina/politicas/terminos-servicio/terminos-servicio.component';
+
 
 
 
@@ -38,6 +43,18 @@ export const routes: Routes = [
     },
     {path: 'registro',
         component:RegistroComponent
+    },
+    {path: 'politica-privacidad',
+        component:PoliticaPrivacidadComponent
+    },
+    {path: 'politica-reembolso',
+        component:PoliticaReembolsoComponent
+    },
+    {path: 'terminos-servicio',
+        component:TerminosServicioComponent
+    },
+    {path: 'terminos-envio',
+        component:TerminosEnvioComponent
     },
     {path: '**',
         component: Error404Component
