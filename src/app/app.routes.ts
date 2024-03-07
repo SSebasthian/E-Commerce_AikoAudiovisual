@@ -44,17 +44,22 @@ export const routes: Routes = [
     {path: 'registro',
         component:RegistroComponent
     },
-    {path: 'politica-privacidad',
-        component:PoliticaPrivacidadComponent
-    },
-    {path: 'politica-reembolso',
-        component:PoliticaReembolsoComponent
-    },
-    {path: 'terminos-servicio',
-        component:TerminosServicioComponent
-    },
-    {path: 'terminos-envio',
-        component:TerminosEnvioComponent
+    {
+        path: 'politica',
+        children:[
+            {path: 'politica-privacidad',
+                component:PoliticaPrivacidadComponent
+            },
+            {path: 'politica-reembolso',
+                component:PoliticaReembolsoComponent
+            },
+            {path: 'terminos-servicio',
+                component:TerminosServicioComponent
+            },
+            {path: 'terminos-envio',
+                component:TerminosEnvioComponent
+            },
+        ]
     },
     {path: '**',
         component: Error404Component
