@@ -1,0 +1,751 @@
+/* ********************************** */
+/*               SERVICIOS            */
+/* ********************************** */
+
+/* DISEÑO */
+
+.contendido-servicios{
+    width: 95%;
+    position: relative;
+    margin: auto;
+}
+
+.contendido-servicios h1{
+    padding-top: 100px;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 30px;
+    font-weight: 600;
+    color: #000;
+}
+
+
+.contenedor{
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+.contenedor .carta{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: rgba(255,255,255,.1);
+    box-shadow: 0 0 20px rgba(0,0,0,.2);
+    border-radius: 15px;
+    margin: 30px; 
+}
+
+.contenedor .carta .contenedor-caja{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor .carta .contenedor-caja .contenido{
+    padding: 20px;
+    text-align: center;
+}
+
+.contenedor .carta .contenedor-caja .contenido h2{
+    position: absolute;
+    top: -10px;
+    right: 30x;
+    font-size: 9em;
+    color: rgba(0, 0, 0, 0.2);
+    transform: 0.5s;
+}
+
+.contenedor .carta .contenedor-caja .contenido h3{
+    font-size: 2em;
+    color: #777;
+    z-index: 1;
+    font-weight: 400;
+}
+
+.contenedor .carta .contenedor-caja .contenido p{
+    text-align: justify;
+    font-size: 1em;
+    font-weight: 300;
+    color: #777;
+    z-index: 1;
+    transition: 0.5s;
+}
+
+/* HOVER */
+
+
+.contenedor .carta:hover .contenedor-caja .contenido h2{
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(15deg, #B95CE4, #4F29CC);
+    z-index: -1;
+    transform: translateY(-50px);
+}
+
+.contenedor .carta .contenedor-caja .contenido a{
+    position: absolute;
+    bottom: 20px;
+    left: 80px;
+    display: inline-block;
+    padding: 8px 20px;
+    background: #6433D8;
+    border-radius: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contenedor .carta .contenedor-caja .contenido a:hover{
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(15deg, #B95CE4, #4F29CC);
+} 
+
+
+/* ************************************ */
+/*           ICONOS SERVICIOS           */
+/* ************************************ */
+
+
+
+.Ilustracion-Editorial {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cpath fill='%23000' d='M34.87 32.21L30 27.37V8.75l-2.3-4.23a2 2 0 0 0-3.54 0L22 8.76v10.65L3.71 1.21A1 1 0 0 0 2 1.92V10h2.17v1.6H2V18h2.17v1.6H2v6.65h2.17v1.6H2v5.07a1 1 0 0 0 1 1h31.16a1 1 0 0 0 .71-1.71M10 26v-9.06L19.07 26Zm18 2.11h-4v-2.43h4Zm0-4h-4V9.25l1.94-3.77L28 9.26Z' class='clr-i-solid clr-i-solid-path-1'/%3E%3Cpath fill='none' d='M0 0h36v36H0z'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+  .Ilustracion-Comercial {
+    display: inline-block;
+    width: 1em;
+    height: 0.87em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'%3E%3Cpath fill='%23000' d='m547.6 103.8l-57.3-90.7C485.2 5 476.1 0 466.4 0H109.6c-9.7 0-18.8 5-23.9 13.1l-57.4 90.7c-29.6 46.8-3.4 111.9 51.9 119.4c4 .5 8.1.8 12.1.8c26.1 0 49.3-11.4 65.2-29c15.9 17.6 39.1 29 65.2 29s49.3-11.4 65.2-29c15.9 17.6 39.1 29 65.2 29c26.2 0 49.3-11.4 65.2-29c16 17.6 39.1 29 65.2 29c4.1 0 8.1-.3 12.1-.8c55.5-7.4 81.8-72.5 52.1-119.4zm-47.9 151.1h-.1c-5.3.7-10.7 1.1-16.2 1.1c-12.4 0-24.3-1.9-35.4-5.3V384H128V250.6c-11.2 3.5-23.2 5.4-35.6 5.4c-5.5 0-11-.4-16.3-1.1H76c-4.1-.6-8.1-1.3-12-2.3V448c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V252.6c-4 1-8 1.8-12.3 2.3'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+  .Diseño-Libro {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23000' d='M202.24 74C166.11 56.75 115.61 48.3 48 48a31.36 31.36 0 0 0-17.92 5.33A32 32 0 0 0 16 79.9V366c0 19.34 13.76 33.93 32 33.93c71.07 0 142.36 6.64 185.06 47a4.11 4.11 0 0 0 6.94-3V106.82a15.89 15.89 0 0 0-5.46-12A143 143 0 0 0 202.24 74m279.68-20.7A31.33 31.33 0 0 0 464 48c-67.61.3-118.11 8.71-154.24 26a143.31 143.31 0 0 0-32.31 20.78a15.93 15.93 0 0 0-5.45 12v337.13a3.93 3.93 0 0 0 6.68 2.81c25.67-25.5 70.72-46.82 185.36-46.81a32 32 0 0 0 32-32v-288a32 32 0 0 0-14.12-26.61'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+  .Ilustracion-Personalizada {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='m8.8 10.95l2.15-2.175l-1.4-1.425l-1.1 1.1l-1.4-1.4l1.075-1.1L7 4.825L4.825 7zm8.2 8.225L19.175 17l-1.125-1.125l-1.1 1.075l-1.4-1.4l1.075-1.1l-1.425-1.4l-2.15 2.15zm-.775-12.75l1.4 1.4l1.4-1.4L17.6 5zM7.25 21H3v-4.25l4.375-4.375L2 7l5-5l5.4 5.4l3.775-3.8q.3-.3.675-.45t.775-.15q.4 0 .775.15t.675.45L20.4 4.95q.3.3.45.675T21 6.4q0 .4-.15.763t-.45.662l-3.775 3.8L22 17l-5 5l-5.375-5.375z'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+  .Diseño-Marca {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M21.04 13.13c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1l-2.05-2.05l1-1c.11-.11.25-.17.39-.17m-1.97 1.75l2.05 2.05L15.06 23H13v-2.06zM3 7V5h2V4a2 2 0 0 1 2-2h6v7l2.5-1.5L18 9V2h1c1.05 0 2 .95 2 2v6L11 20v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2 0h2V5H5zm0 4v2h2v-2zm0 6v2h2v-2z'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+
+.Diseño-Estampado {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M18 6H6c-1.886 0-2.828 0-3.414.586C2 7.172 2 8.114 2 10v3c0 .471 0 .707.146.854C2.293 14 2.53 14 3 14h4.7c.141 0 .212 0 .256-.044C8 13.912 8 13.841 8 13.7v-.2c0-.943 0-1.414.293-1.707c.293-.293.764-.293 1.707-.293h4c.943 0 1.414 0 1.707.293c.293.293.293.764.293 1.707v.2c0 .141 0 .212.044.256c.044.044.115.044.256.044H20c.943 0 1.414 0 1.707-.293C22 13.414 22 12.943 22 12v-2c0-1.886 0-2.828-.586-3.414C20.828 6 19.886 6 18 6M7 3.74c0-.693 0-1.039.164-1.288a1 1 0 0 1 .288-.288C7.702 2 8.047 2 8.739 2h6.522c.692 0 1.038 0 1.288.164a1 1 0 0 1 .287.288c.164.25.164.595.164 1.287c0 .104 0 .156-.025.193a.149.149 0 0 1-.043.043C16.895 4 16.842 4 16.74 4H7.261c-.104 0-.156 0-.193-.025a.15.15 0 0 1-.043-.043C7 3.895 7 3.842 7 3.74'/%3E%3Cpath fill='%23000' fill-rule='evenodd' d='M5 20.337V13c0-.943 0-1.414.293-1.707C5.586 11 6.057 11 7 11h10c.943 0 1.414 0 1.707.293c.293.293.293.764.293 1.707v7.337c0 .304 0 .456-.1.531c-.099.075-.245.033-.537-.05l-2.726-.779a.523.523 0 0 0-.137-.029a.5.5 0 0 0-.137.03l-3.226.92c-.068.02-.102.03-.137.03a.5.5 0 0 1-.137-.03l-3.226-.92a.522.522 0 0 0-.137-.03a.5.5 0 0 0-.137.03l-2.726.778c-.292.083-.438.125-.538.05C5 20.793 5 20.641 5 20.338M9 14a1 1 0 0 1 1-1h3a1 1 0 1 1 0 2h-3a1 1 0 0 1-1-1m1 2a1 1 0 1 0 0 2h4.5a1 1 0 1 0 0-2z' clip-rule='evenodd'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+
+
+
+/* ************************************ */
+/*           MENU RESPONSIVE            */
+/* ************************************ */
+
+/* DISEÑO EN 770 PIXELES CELULAR */
+
+@media screen and (max-width: 770px) {
+
+    .contendido-servicios h1{
+        padding-top: 120px;
+        font-size: 45px;
+    }
+
+    .contenedor .carta{
+        width: 450px;
+        height: 560px;    
+    }
+    
+    .contenedor .carta .contenedor-caja{
+        top: 40px;
+        left: 40px;
+        right: 40px;
+        bottom: 40px;
+    }
+       
+    .contenedor .carta .contenedor-caja .contenido h2{
+        top: -30px;
+        font-size: 12em;
+    }
+    
+    .contenedor .carta .contenedor-caja .contenido h3{
+        font-size: 3em;
+        line-height: 40px;
+    }
+    
+    .contenedor .carta .contenedor-caja .contenido p{
+        font-size: 25px;
+        line-height: 30px;
+    }
+    
+    .contenedor .carta .contenedor-caja .contenido a{
+        font-size: 20px;
+        padding: 20px;
+        bottom: 10px;
+        left: 135px;
+    }
+}/* ********************************** */
+/*               SERVICIOS            */
+/* ********************************** */
+
+/* DISEÑO */
+
+.contendido-servicios{
+    width: 95%;
+    position: relative;
+    margin: auto;
+}
+
+.contendido-servicios h1{
+    padding-top: 100px;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 30px;
+    font-weight: 600;
+    color: #000;
+}
+
+
+.contenedor{
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+.contenedor .carta{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: rgba(255,255,255,.1);
+    box-shadow: 0 0 20px rgba(0,0,0,.2);
+    border-radius: 15px;
+    margin: 30px; 
+}
+
+.contenedor .carta .contenedor-caja{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor .carta .contenedor-caja .contenido{
+    padding: 20px;
+    text-align: center;
+}
+
+.contenedor .carta .contenedor-caja .contenido h2{
+    position: absolute;
+    top: -10px;
+    right: 30x;
+    font-size: 9em;
+    color: rgba(0, 0, 0, 0.2);
+    transform: 0.5s;
+}
+
+.contenedor .carta .contenedor-caja .contenido h3{
+    font-size: 2em;
+    color: #777;
+    z-index: 1;
+    font-weight: 400;
+}
+
+.contenedor .carta .contenedor-caja .contenido p{
+    text-align: justify;
+    font-size: 1em;
+    font-weight: 300;
+    color: #777;
+    z-index: 1;
+    transition: 0.5s;
+}
+
+/* HOVER */
+
+
+.contenedor .carta:hover .contenedor-caja .contenido h2{
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(15deg, #B95CE4, #4F29CC);
+    z-index: -1;
+    transform: translateY(-50px);
+}
+
+.contenedor .carta .contenedor-caja .contenido a{
+    position: absolute;
+    bottom: 20px;
+    left: 80px;
+    display: inline-block;
+    padding: 8px 20px;
+    background: #6433D8;
+    border-radius: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contenedor .carta .contenedor-caja .contenido a:hover{
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(15deg, #B95CE4, #4F29CC);
+} 
+
+
+/* ************************************ */
+/*           ICONOS SERVICIOS           */
+/* ************************************ */
+
+
+
+.Ilustracion-Editorial {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cpath fill='%23000' d='M34.87 32.21L30 27.37V8.75l-2.3-4.23a2 2 0 0 0-3.54 0L22 8.76v10.65L3.71 1.21A1 1 0 0 0 2 1.92V10h2.17v1.6H2V18h2.17v1.6H2v6.65h2.17v1.6H2v5.07a1 1 0 0 0 1 1h31.16a1 1 0 0 0 .71-1.71M10 26v-9.06L19.07 26Zm18 2.11h-4v-2.43h4Zm0-4h-4V9.25l1.94-3.77L28 9.26Z' class='clr-i-solid clr-i-solid-path-1'/%3E%3Cpath fill='none' d='M0 0h36v36H0z'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+  .Ilustracion-Comercial {
+    display: inline-block;
+    width: 1em;
+    height: 0.87em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'%3E%3Cpath fill='%23000' d='m547.6 103.8l-57.3-90.7C485.2 5 476.1 0 466.4 0H109.6c-9.7 0-18.8 5-23.9 13.1l-57.4 90.7c-29.6 46.8-3.4 111.9 51.9 119.4c4 .5 8.1.8 12.1.8c26.1 0 49.3-11.4 65.2-29c15.9 17.6 39.1 29 65.2 29s49.3-11.4 65.2-29c15.9 17.6 39.1 29 65.2 29c26.2 0 49.3-11.4 65.2-29c16 17.6 39.1 29 65.2 29c4.1 0 8.1-.3 12.1-.8c55.5-7.4 81.8-72.5 52.1-119.4zm-47.9 151.1h-.1c-5.3.7-10.7 1.1-16.2 1.1c-12.4 0-24.3-1.9-35.4-5.3V384H128V250.6c-11.2 3.5-23.2 5.4-35.6 5.4c-5.5 0-11-.4-16.3-1.1H76c-4.1-.6-8.1-1.3-12-2.3V448c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V252.6c-4 1-8 1.8-12.3 2.3'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+  .Diseño-Libro {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23000' d='M202.24 74C166.11 56.75 115.61 48.3 48 48a31.36 31.36 0 0 0-17.92 5.33A32 32 0 0 0 16 79.9V366c0 19.34 13.76 33.93 32 33.93c71.07 0 142.36 6.64 185.06 47a4.11 4.11 0 0 0 6.94-3V106.82a15.89 15.89 0 0 0-5.46-12A143 143 0 0 0 202.24 74m279.68-20.7A31.33 31.33 0 0 0 464 48c-67.61.3-118.11 8.71-154.24 26a143.31 143.31 0 0 0-32.31 20.78a15.93 15.93 0 0 0-5.45 12v337.13a3.93 3.93 0 0 0 6.68 2.81c25.67-25.5 70.72-46.82 185.36-46.81a32 32 0 0 0 32-32v-288a32 32 0 0 0-14.12-26.61'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+  .Ilustracion-Personalizada {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='m8.8 10.95l2.15-2.175l-1.4-1.425l-1.1 1.1l-1.4-1.4l1.075-1.1L7 4.825L4.825 7zm8.2 8.225L19.175 17l-1.125-1.125l-1.1 1.075l-1.4-1.4l1.075-1.1l-1.425-1.4l-2.15 2.15zm-.775-12.75l1.4 1.4l1.4-1.4L17.6 5zM7.25 21H3v-4.25l4.375-4.375L2 7l5-5l5.4 5.4l3.775-3.8q.3-.3.675-.45t.775-.15q.4 0 .775.15t.675.45L20.4 4.95q.3.3.45.675T21 6.4q0 .4-.15.763t-.45.662l-3.775 3.8L22 17l-5 5l-5.375-5.375z'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+  .Diseño-Marca {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M21.04 13.13c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1l-2.05-2.05l1-1c.11-.11.25-.17.39-.17m-1.97 1.75l2.05 2.05L15.06 23H13v-2.06zM3 7V5h2V4a2 2 0 0 1 2-2h6v7l2.5-1.5L18 9V2h1c1.05 0 2 .95 2 2v6L11 20v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2 0h2V5H5zm0 4v2h2v-2zm0 6v2h2v-2z'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+
+.Diseño-Estampado {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M18 6H6c-1.886 0-2.828 0-3.414.586C2 7.172 2 8.114 2 10v3c0 .471 0 .707.146.854C2.293 14 2.53 14 3 14h4.7c.141 0 .212 0 .256-.044C8 13.912 8 13.841 8 13.7v-.2c0-.943 0-1.414.293-1.707c.293-.293.764-.293 1.707-.293h4c.943 0 1.414 0 1.707.293c.293.293.293.764.293 1.707v.2c0 .141 0 .212.044.256c.044.044.115.044.256.044H20c.943 0 1.414 0 1.707-.293C22 13.414 22 12.943 22 12v-2c0-1.886 0-2.828-.586-3.414C20.828 6 19.886 6 18 6M7 3.74c0-.693 0-1.039.164-1.288a1 1 0 0 1 .288-.288C7.702 2 8.047 2 8.739 2h6.522c.692 0 1.038 0 1.288.164a1 1 0 0 1 .287.288c.164.25.164.595.164 1.287c0 .104 0 .156-.025.193a.149.149 0 0 1-.043.043C16.895 4 16.842 4 16.74 4H7.261c-.104 0-.156 0-.193-.025a.15.15 0 0 1-.043-.043C7 3.895 7 3.842 7 3.74'/%3E%3Cpath fill='%23000' fill-rule='evenodd' d='M5 20.337V13c0-.943 0-1.414.293-1.707C5.586 11 6.057 11 7 11h10c.943 0 1.414 0 1.707.293c.293.293.293.764.293 1.707v7.337c0 .304 0 .456-.1.531c-.099.075-.245.033-.537-.05l-2.726-.779a.523.523 0 0 0-.137-.029a.5.5 0 0 0-.137.03l-3.226.92c-.068.02-.102.03-.137.03a.5.5 0 0 1-.137-.03l-3.226-.92a.522.522 0 0 0-.137-.03a.5.5 0 0 0-.137.03l-2.726.778c-.292.083-.438.125-.538.05C5 20.793 5 20.641 5 20.338M9 14a1 1 0 0 1 1-1h3a1 1 0 1 1 0 2h-3a1 1 0 0 1-1-1m1 2a1 1 0 1 0 0 2h4.5a1 1 0 1 0 0-2z' clip-rule='evenodd'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+
+
+
+/* ************************************ */
+/*           MENU RESPONSIVE            */
+/* ************************************ */
+
+/* DISEÑO EN 770 PIXELES CELULAR */
+
+@media screen and (max-width: 770px) {
+
+    .contendido-servicios h1{
+        padding-top: 120px;
+        font-size: 45px;
+    }
+
+    .contenedor .carta{
+        width: 450px;
+        height: 560px;    
+    }
+    
+    .contenedor .carta .contenedor-caja{
+        top: 40px;
+        left: 40px;
+        right: 40px;
+        bottom: 40px;
+    }
+       
+    .contenedor .carta .contenedor-caja .contenido h2{
+        top: -30px;
+        font-size: 12em;
+    }
+    
+    .contenedor .carta .contenedor-caja .contenido h3{
+        font-size: 3em;
+        line-height: 40px;
+    }
+    
+    .contenedor .carta .contenedor-caja .contenido p{
+        font-size: 25px;
+        line-height: 30px;
+    }
+    
+    .contenedor .carta .contenedor-caja .contenido a{
+        font-size: 20px;
+        padding: 20px;
+        bottom: 10px;
+        left: 135px;
+    }
+}/* ********************************** */
+/*               SERVICIOS            */
+/* ********************************** */
+
+/* DISEÑO */
+
+.contendido-servicios{
+    width: 95%;
+    position: relative;
+    margin: auto;
+}
+
+.contendido-servicios h1{
+    padding-top: 100px;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 30px;
+    font-weight: 600;
+    color: #000;
+}
+
+
+.contenedor{
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+.contenedor .carta{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: rgba(255,255,255,.1);
+    box-shadow: 0 0 20px rgba(0,0,0,.2);
+    border-radius: 15px;
+    margin: 30px; 
+}
+
+.contenedor .carta .contenedor-caja{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor .carta .contenedor-caja .contenido{
+    padding: 20px;
+    text-align: center;
+}
+
+.contenedor .carta .contenedor-caja .contenido h2{
+    position: absolute;
+    top: -10px;
+    right: 30x;
+    font-size: 9em;
+    color: rgba(0, 0, 0, 0.2);
+    transform: 0.5s;
+}
+
+.contenedor .carta .contenedor-caja .contenido h3{
+    font-size: 2em;
+    color: #777;
+    z-index: 1;
+    font-weight: 400;
+}
+
+.contenedor .carta .contenedor-caja .contenido p{
+    text-align: justify;
+    font-size: 1em;
+    font-weight: 300;
+    color: #777;
+    z-index: 1;
+    transition: 0.5s;
+}
+
+/* HOVER */
+
+
+.contenedor .carta:hover .contenedor-caja .contenido h2{
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(15deg, #B95CE4, #4F29CC);
+    z-index: -1;
+    transform: translateY(-50px);
+}
+
+.contenedor .carta .contenedor-caja .contenido a{
+    position: absolute;
+    bottom: 20px;
+    left: 80px;
+    display: inline-block;
+    padding: 8px 20px;
+    background: #6433D8;
+    border-radius: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contenedor .carta .contenedor-caja .contenido a:hover{
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(15deg, #B95CE4, #4F29CC);
+} 
+
+
+/* ************************************ */
+/*           ICONOS SERVICIOS           */
+/* ************************************ */
+
+
+
+.Ilustracion-Editorial {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cpath fill='%23000' d='M34.87 32.21L30 27.37V8.75l-2.3-4.23a2 2 0 0 0-3.54 0L22 8.76v10.65L3.71 1.21A1 1 0 0 0 2 1.92V10h2.17v1.6H2V18h2.17v1.6H2v6.65h2.17v1.6H2v5.07a1 1 0 0 0 1 1h31.16a1 1 0 0 0 .71-1.71M10 26v-9.06L19.07 26Zm18 2.11h-4v-2.43h4Zm0-4h-4V9.25l1.94-3.77L28 9.26Z' class='clr-i-solid clr-i-solid-path-1'/%3E%3Cpath fill='none' d='M0 0h36v36H0z'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+  .Ilustracion-Comercial {
+    display: inline-block;
+    width: 1em;
+    height: 0.87em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'%3E%3Cpath fill='%23000' d='m547.6 103.8l-57.3-90.7C485.2 5 476.1 0 466.4 0H109.6c-9.7 0-18.8 5-23.9 13.1l-57.4 90.7c-29.6 46.8-3.4 111.9 51.9 119.4c4 .5 8.1.8 12.1.8c26.1 0 49.3-11.4 65.2-29c15.9 17.6 39.1 29 65.2 29s49.3-11.4 65.2-29c15.9 17.6 39.1 29 65.2 29c26.2 0 49.3-11.4 65.2-29c16 17.6 39.1 29 65.2 29c4.1 0 8.1-.3 12.1-.8c55.5-7.4 81.8-72.5 52.1-119.4zm-47.9 151.1h-.1c-5.3.7-10.7 1.1-16.2 1.1c-12.4 0-24.3-1.9-35.4-5.3V384H128V250.6c-11.2 3.5-23.2 5.4-35.6 5.4c-5.5 0-11-.4-16.3-1.1H76c-4.1-.6-8.1-1.3-12-2.3V448c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V252.6c-4 1-8 1.8-12.3 2.3'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+  .Diseño-Libro {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23000' d='M202.24 74C166.11 56.75 115.61 48.3 48 48a31.36 31.36 0 0 0-17.92 5.33A32 32 0 0 0 16 79.9V366c0 19.34 13.76 33.93 32 33.93c71.07 0 142.36 6.64 185.06 47a4.11 4.11 0 0 0 6.94-3V106.82a15.89 15.89 0 0 0-5.46-12A143 143 0 0 0 202.24 74m279.68-20.7A31.33 31.33 0 0 0 464 48c-67.61.3-118.11 8.71-154.24 26a143.31 143.31 0 0 0-32.31 20.78a15.93 15.93 0 0 0-5.45 12v337.13a3.93 3.93 0 0 0 6.68 2.81c25.67-25.5 70.72-46.82 185.36-46.81a32 32 0 0 0 32-32v-288a32 32 0 0 0-14.12-26.61'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+  .Ilustracion-Personalizada {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='m8.8 10.95l2.15-2.175l-1.4-1.425l-1.1 1.1l-1.4-1.4l1.075-1.1L7 4.825L4.825 7zm8.2 8.225L19.175 17l-1.125-1.125l-1.1 1.075l-1.4-1.4l1.075-1.1l-1.425-1.4l-2.15 2.15zm-.775-12.75l1.4 1.4l1.4-1.4L17.6 5zM7.25 21H3v-4.25l4.375-4.375L2 7l5-5l5.4 5.4l3.775-3.8q.3-.3.675-.45t.775-.15q.4 0 .775.15t.675.45L20.4 4.95q.3.3.45.675T21 6.4q0 .4-.15.763t-.45.662l-3.775 3.8L22 17l-5 5l-5.375-5.375z'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+  .Diseño-Marca {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M21.04 13.13c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1l-2.05-2.05l1-1c.11-.11.25-.17.39-.17m-1.97 1.75l2.05 2.05L15.06 23H13v-2.06zM3 7V5h2V4a2 2 0 0 1 2-2h6v7l2.5-1.5L18 9V2h1c1.05 0 2 .95 2 2v6L11 20v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2 0h2V5H5zm0 4v2h2v-2zm0 6v2h2v-2z'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+
+.Diseño-Estampado {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M18 6H6c-1.886 0-2.828 0-3.414.586C2 7.172 2 8.114 2 10v3c0 .471 0 .707.146.854C2.293 14 2.53 14 3 14h4.7c.141 0 .212 0 .256-.044C8 13.912 8 13.841 8 13.7v-.2c0-.943 0-1.414.293-1.707c.293-.293.764-.293 1.707-.293h4c.943 0 1.414 0 1.707.293c.293.293.293.764.293 1.707v.2c0 .141 0 .212.044.256c.044.044.115.044.256.044H20c.943 0 1.414 0 1.707-.293C22 13.414 22 12.943 22 12v-2c0-1.886 0-2.828-.586-3.414C20.828 6 19.886 6 18 6M7 3.74c0-.693 0-1.039.164-1.288a1 1 0 0 1 .288-.288C7.702 2 8.047 2 8.739 2h6.522c.692 0 1.038 0 1.288.164a1 1 0 0 1 .287.288c.164.25.164.595.164 1.287c0 .104 0 .156-.025.193a.149.149 0 0 1-.043.043C16.895 4 16.842 4 16.74 4H7.261c-.104 0-.156 0-.193-.025a.15.15 0 0 1-.043-.043C7 3.895 7 3.842 7 3.74'/%3E%3Cpath fill='%23000' fill-rule='evenodd' d='M5 20.337V13c0-.943 0-1.414.293-1.707C5.586 11 6.057 11 7 11h10c.943 0 1.414 0 1.707.293c.293.293.293.764.293 1.707v7.337c0 .304 0 .456-.1.531c-.099.075-.245.033-.537-.05l-2.726-.779a.523.523 0 0 0-.137-.029a.5.5 0 0 0-.137.03l-3.226.92c-.068.02-.102.03-.137.03a.5.5 0 0 1-.137-.03l-3.226-.92a.522.522 0 0 0-.137-.03a.5.5 0 0 0-.137.03l-2.726.778c-.292.083-.438.125-.538.05C5 20.793 5 20.641 5 20.338M9 14a1 1 0 0 1 1-1h3a1 1 0 1 1 0 2h-3a1 1 0 0 1-1-1m1 2a1 1 0 1 0 0 2h4.5a1 1 0 1 0 0-2z' clip-rule='evenodd'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+
+
+
+/* ************************************ */
+/*           MENU RESPONSIVE            */
+/* ************************************ */
+
+/* DISEÑO EN 770 PIXELES CELULAR */
+
+@media screen and (max-width: 770px) {
+
+    .contendido-servicios h1{
+        padding-top: 120px;
+        font-size: 45px;
+    }
+
+    .contenedor .carta{
+        width: 450px;
+        height: 560px;    
+    }
+    
+    .contenedor .carta .contenedor-caja{
+        top: 40px;
+        left: 40px;
+        right: 40px;
+        bottom: 40px;
+    }
+       
+    .contenedor .carta .contenedor-caja .contenido h2{
+        top: -30px;
+        font-size: 12em;
+    }
+    
+    .contenedor .carta .contenedor-caja .contenido h3{
+        font-size: 3em;
+        line-height: 40px;
+    }
+    
+    .contenedor .carta .contenedor-caja .contenido p{
+        font-size: 25px;
+        line-height: 30px;
+    }
+    
+    .contenedor .carta .contenedor-caja .contenido a{
+        font-size: 20px;
+        padding: 20px;
+        bottom: 10px;
+        left: 135px;
+    }
+}

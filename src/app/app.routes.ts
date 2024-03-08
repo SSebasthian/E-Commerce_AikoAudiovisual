@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { InicioComponent } from './pagina/inicio/inicio.component';
-import { ServicioComponent } from './pagina/servicio/servicio.component';
+import { ServicioComponent } from './pagina/servicio/servicio-principal/servicio.component';
 import { ContactoComponent } from './pagina/contacto/contacto.component';
 import { ProductoComponent } from './pagina/producto/producto.component';
 import { ProductoDetalleComponent } from './pagina/producto-detalle/producto-detalle.component';
