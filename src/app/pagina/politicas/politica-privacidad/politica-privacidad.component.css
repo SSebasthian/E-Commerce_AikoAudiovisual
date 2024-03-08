@@ -1,0 +1,44 @@
+.contenido-general{
+    width: 95%;
+    margin: auto;
+    padding: 50px 0 10px 0;
+    justify-content: center;
+    text-align: center;
+}
+.contenido-general h1{
+    letter-spacing: 2px;
+    font-size: 30px;
+    font-weight: 600;
+}
+.contenido{
+    position: relative;
+    max-width: 500px;
+    height: 100%;
+    margin: auto;
+    font-weight: 500;
+    text-align: justify;
+}
+.contenido article{
+    padding-top: 15px;
+}
+.contenido article h2{
+    padding-top: 10px;
+}
+.contenido article h2{
+    position: relative;
+    top: 7px;
+}
+.contenido article p span{
+    color: red;
+}
+
+@media screen and (max-width: 700px){
+    .contenido-general{
+        position: relative;
+        top: 60px;
+    }
+    .contenido{
+        width: 60%;
+        font-size: 20px;
+    }
+}
