@@ -38,11 +38,15 @@ export const routes: Routes = [
     {path: 'carrito',
         component:CarritoComponent
     },
-    {path: 'acceso',
-        component:AccesoComponent
-    },
-    {path: 'registro',
-        component:RegistroComponent
+    {path: 'autenticacion',
+        children:[
+                {path: 'acceso',
+                component:AccesoComponent
+            },
+                {path: 'registro',
+                component:RegistroComponent
+            },
+        ],
     },
     {
         path: 'politica',

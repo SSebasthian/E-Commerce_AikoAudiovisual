@@ -1,1 +1,56 @@
-<p>acceso works!</p>
+<!-- ------------------------------- -->
+<!--    CONTENIDO FORM ACCESO      -->
+<!-- ------------------------------- -->
+
+<div class="contenedor-acceso">
+
+    <!-- IMAGEN -->
+    <div class="fondo-img">
+      <img src="../../../../assets/imagenes/acceso.png" alt="Acceso IMG">
+    </div>
+  
+    <!-- FORMULARIO -->
+    <div class="formulario-contenido">
+        <h1>Iniciar Sesion</h1>
+  
+        <!-- ACCION A ENVIAR FORM -->
+        <form>
+  
+            <!-- CAMPO CORREO -->
+            <div>
+                <mat-form-field class="grupo-formulario" appearance="outline">
+                <mat-icon class="icon-form"> mail_outline</mat-icon>
+                <mat-label>Correo</mat-label>
+                <input matInput />
+                <p class="linea"></p>
+                </mat-form-field>
+            </div>
+        
+            <!-- CAMPO CONTRASEÑA -->
+            <div>
+                <mat-form-field class="grupo-formulario" appearance="outline">
+                    <mat-icon class="icon-form"> vpn_key</mat-icon>
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput />
+                    <p class="linea"></p>
+                    <a mat-icon-button matSuffix>
+                        <mat-icon class="icon-mostrar-ocultar">visibility_off</mat-icon>
+                    </a>
+                </mat-form-field>
+            </div>
+  
+            <!-- BOTON PARA ENVIAR FORMULARIO -->
+            <div>
+                <button mat-flat-button color="accent" type="submit">Acceder</button>
+            </div>
+        </form>
+  
+        <hr />
+  
+        <!-- OPCION PARA REDIRIGAR A ACCESO -->
+        <span class="msj-registro">
+            Aun no tienes una cuenta?<br>
+            <a routerLink="/autenticacion/registro">Crear Cuenta</a>
+        </span>
+    </div>
+</div>
