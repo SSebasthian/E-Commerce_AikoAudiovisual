@@ -7,6 +7,10 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
+import { AutenticadorService } from '../../../arquitectura/servicio/autenticador.service';
+
+
+
 interface LogInForm{
   email: FormControl<string>;
   password: FormControl<string>;
