@@ -14,15 +14,20 @@
         <h1>Iniciar Sesion</h1>
   
         <!-- ACCION A ENVIAR FORM -->
-        <form>
+        <form [formGroup]="formularioAcceso" (ngSubmit)="envioAcceso()">
   
             <!-- CAMPO CORREO -->
             <div>
                 <mat-form-field class="grupo-formulario" appearance="outline">
-                <mat-icon class="icon-form"> mail_outline</mat-icon>
-                <mat-label>Correo</mat-label>
-                <input matInput />
-                <p class="linea"></p>
+                    <mat-icon class="icon-form"> mail_outline</mat-icon>
+                    <mat-label>Correo</mat-label>
+                    <input 
+                        matInput 
+                        formControlName="email"
+                    />
+                    <p class="linea"></p>
+                    <!-- MENSAJE SI EL DATO INGRESADO ESTA INVALIDO -->
+                    <mat-error *ngIf="validacionCorreo as message">{{ message }}</mat-error>
                 </mat-form-field>
             </div>
         
@@ -31,11 +36,24 @@
                 <mat-form-field class="grupo-formulario" appearance="outline">
                     <mat-icon class="icon-form"> vpn_key</mat-icon>
                     <mat-label>Contraseña</mat-label>
-                    <input matInput />
+                    <!-- USUARIO PUEDE OCULTAR O MOSTRAR CLAVE  SEGUN SU BOTON -->
+                    <input
+                        matInput
+                        [type]="mostrarOcultarClave ? 'password' : 'text'"
+                        formControlName="password"
+                    />
                     <p class="linea"></p>
-                    <a mat-icon-button matSuffix>
-                        <mat-icon class="icon-mostrar-ocultar">visibility_off</mat-icon>
+                    <a
+                        mat-icon-button
+                        matSuffix
+                        (click)="mostrarOcultarClave = !mostrarOcultarClave"
+                        [attr.aria-label]="'mostrarOcultarClave password'"
+                        [attr.aria-pressed]="mostrarOcultarClave"
+                        >
+                        <mat-icon class="icon-mostrar-ocultar">{{ mostrarOcultarClave ? "visibility_off" : "visibility" }}</mat-icon>
                     </a>
+                    <!-- VALIDA CAMPO CONTRASEÑA -->
+                    <mat-error>Campo Requerido</mat-error>
                 </mat-form-field>
             </div>
   
