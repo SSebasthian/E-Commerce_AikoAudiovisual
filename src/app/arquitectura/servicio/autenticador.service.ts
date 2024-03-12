@@ -4,6 +4,7 @@ import {
   UserCredential, 
   authState,
   createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
 } from '@angular/fire/auth';
 
 // INTERFACE PARA CORREO Y CONTRASEÑA
@@ -20,9 +21,18 @@ export interface Credencial {
 export class AutenticadorService {
   private autenticador : Auth = inject(Auth);
 
-  // GUARDA CREDENCIALES DE FORM
+  // TRAE DATOS DE FORM Y SI TODO ESTA BIEN LO REGISTRA EN FIREBASE
   registroCorreoContraseña(credencial: Credencial): Promise < UserCredential > {
     return createUserWithEmailAndPassword(
+      this.autenticador,
+      credencial.email,
+      credencial.password
+    );
+  }
+
+  // VALIDA SI EXISTE LOS DATOS Y I TODO ESTA BIEN PERMITE EL INGRESO
+  accesoCorreoContraseña(credencial: Credencial){
+    return signInWithEmailAndPassword(
       this.autenticador,
       credencial.email,
       credencial.password

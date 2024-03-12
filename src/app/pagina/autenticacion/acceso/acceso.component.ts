@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
-import { AutenticadorService } from '../../../arquitectura/servicio/autenticador.service';
+import { AutenticadorService, Credencial } from '../../../arquitectura/servicio/autenticador.service';
 
 
 
@@ -39,7 +39,9 @@ export class AccesoComponent {
   // Mostrar Ocultar Contraseña FORMULARIO
   mostrarOcultarClave = true;
 
-  // private AutenticadorService = inject(AutenticadorService);
+  // Se llama servicio autenticador
+  private AutenticadorService = inject(AutenticadorService);
+
   formBuilder = inject(FormBuilder);
 
 
@@ -75,7 +77,21 @@ export class AccesoComponent {
       return false;
   }
 
-    envioAcceso(){
-      
+  
+ async envioAcceso(): Promise<void>{
+  if ( this.formularioAcceso.invalid) return;
+
+  const credencial: Credencial = {
+    email: this.formularioAcceso.value.email || '',
+    password: this.formularioAcceso.value.password || '',
+  };
+  try {
+    await this.AutenticadorService.accesoCorreoContraseña(credencial);
+  
+    this.router.navigateByUrl('/')
+
+  } catch (error) {
+    console.error(error);
   }
+}
 }
