@@ -14,15 +14,18 @@
       <h1>Crear Cuenta</h1>
             
             <!-- ACCION A ENVIAR FORM -->
-            <form>
+            <form [formGroup]="formularioRegistro" (ngSubmit)="EnvioRegistro()">
   
-              <!-- CAMPO USUARIO -->
+               <!-- CAMPO USUARIO -->
               <div>
                 <mat-form-field class="grupo-formulario" appearance="outline">
-                    <mat-icon class="icon-form">person</mat-icon>
-                    <mat-label>Nombre</mat-label>
-                    <input matInput />
-                    <p class="linea"></p>
+                  <mat-icon class="icon-form">person</mat-icon>
+                  <mat-label>Nombre</mat-label>
+                  <!-- SE GUARDA EN FORM NAME INTERFACE -->
+                  <input matInput formControlName="name" />
+                  <p class="linea"></p>
+                  <!-- MENSAJE SI EL DATO INGRESADO ESTA INVALIDO -->
+                  <mat-error>Campo Requerido</mat-error>
                 </mat-form-field>
               </div>
   
@@ -31,8 +34,11 @@
                 <mat-form-field class="grupo-formulario" appearance="outline">
                     <mat-icon class="icon-form">mail_outline</mat-icon>
                     <mat-label>Correo</mat-label>
-                    <input matInput />
+                    <!-- SE GUARDA EN FORM EMAIL INTERFACE -->
+                    <input matInput formControlName="email" />
                     <p class="linea"></p>
+                    <!-- MENSAJE SI EL DATO INGRESADO ESTA INVALIDO -->
+                    <mat-error *ngIf="validacionCorreo as message">{{ message }}</mat-error>
                 </mat-form-field>
               </div>
         
@@ -41,11 +47,26 @@
                 <mat-form-field class="grupo-formulario" appearance="outline">
                     <mat-icon class="icon-form">vpn_key</mat-icon>
                     <mat-label>Contraseña</mat-label>
-                    <input matInput />
+                    <!-- SE GUARDA EN FORM PASSWORD INTERFACE --> 
+                    <!-- USUARIO PUEDE OCULTAR O MOSTRAR CLAVE  SEGUN SU BOTON -->
+                    <input
+                      matInput formControlName="password"
+                      [type]="mostrarOcultarClave ? 'password' : 'text'"
+                      formControlName="password"
+                    />
                     <p class="linea"></p>
-                    <a mat-icon-button matSuffix>
-                        <mat-icon class="icon-mostrar-ocultar">visibility_off</mat-icon>
+                    <!-- USUARIO PUEDE OCULTAR O MOSTRAR CLAVE  SEGUN SU BOTON -->
+                    <a
+                      mat-icon-button
+                      matSuffix
+                      (click)="mostrarOcultarClave = !mostrarOcultarClave"
+                      [attr.aria-label]="'Hide password'"
+                      [attr.aria-pressed]="mostrarOcultarClave"
+                    >
+                      <mat-icon class="icon-mostrar-ocultar">{{ mostrarOcultarClave ? "visibility_off" : "visibility" }}</mat-icon>
                     </a>
+                    <!-- MENSAJE SI EL DATO INGRESADO ESTA INVALIDO -->
+                    <mat-error>Campo Requerido</mat-error>
                 </mat-form-field>
               </div>
               
