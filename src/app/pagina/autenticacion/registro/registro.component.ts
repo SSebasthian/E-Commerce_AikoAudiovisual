@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
-import { AutenticadorService } from '../../../arquitectura/servicio/autenticador.service';
+import { AutenticadorService, Credencial } from '../../../arquitectura/servicio/autenticador.service';
 
 interface registroForm{
   name: FormControl<string>;
@@ -45,6 +45,8 @@ export class RegistroComponent {
   // private AutenticadorService = inject(AutenticadorService);
   private _router = inject(Router);
 
+  // Se llama servicio autenticador
+  private AutenticadorService = inject(AutenticadorService);
 
   // SE VALIDA QUE LOS DATOS ESTEN VALIDOS FORMULARIO
   formularioRegistro: FormGroup<registroForm> = this.formBuilder.group({
@@ -79,8 +81,26 @@ export class RegistroComponent {
         return false;
       };
 
-  
-     EnvioRegistro(){
-      
-      };
+      // GUARDA CREDENCIALES DE FORM Y LO ENVIA AL SERVICIO
+      async EnvioRegistro(): Promise<void>{
+        if (this.formularioRegistro.invalid) return;
+        // Trae las credeciales ingresadas por el usuario
+        const credencial : Credencial ={
+          email: this.formularioRegistro.value.email || '',
+          password: this.formularioRegistro.value.password || '',
+        };
+        // Si el registro es correcto se envian datos a firebase y redirige al usuario a inicio
+        try {
+          const userCredentials = await this.AutenticadorService.registroCorreoContraseña(credencial);
+          this. _router.navigateByUrl('/')
+
+        } 
+        // Si el registro no es correcto envia error
+        catch (error) {
+          console.log(error)
+        }
+        // muestra datos en consola
+        console.log(this.formularioRegistro.value);
+    }
+
 }
