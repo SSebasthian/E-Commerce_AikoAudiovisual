@@ -14,6 +14,9 @@ import { TerminosEnvioComponent } from './pagina/politicas/terminos-envio/termin
 import { TerminosServicioComponent } from './pagina/politicas/terminos-servicio/terminos-servicio.component';
 import { PerfilComponent } from './pagina/perfil/perfil.component';
 
+import { estadoPrivado, estadoPublico } from './arquitectura/enrutamiento/autenticador.guard';
+
+
 
 
 
@@ -40,6 +43,7 @@ export const routes: Routes = [
         component:CarritoComponent
     },
     {path: 'autenticacion',
+        canActivate: [estadoPublico],
         children:[
                 {path: 'acceso',
                 component:AccesoComponent
@@ -50,7 +54,8 @@ export const routes: Routes = [
         ],
     },
     {path: 'perfil',
-        component:PerfilComponent
+        component:PerfilComponent,
+        canActivate: [estadoPrivado]
     },
     {
         path: 'politica',

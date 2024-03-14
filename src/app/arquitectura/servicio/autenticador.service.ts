@@ -21,6 +21,9 @@ export interface Credencial {
 export class AutenticadorService {
   private autenticador : Auth = inject(Auth);
 
+  // SE VALIDA SI EL USUARIO ESTA LOGUEADO O NO
+  readonly estadoIngresoSistema$ = authState(this.autenticador);
+
   // TRAE DATOS DE FORM Y SI TODO ESTA BIEN LO REGISTRA EN FIREBASE
   registroCorreoContraseña(credencial: Credencial): Promise < UserCredential > {
     return createUserWithEmailAndPassword(
