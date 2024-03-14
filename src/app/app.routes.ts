@@ -12,6 +12,7 @@ import { PoliticaPrivacidadComponent } from './pagina/politicas/politica-privaci
 import { PoliticaReembolsoComponent } from './pagina/politicas/politica-reembolso/politica-reembolso.component';
 import { TerminosEnvioComponent } from './pagina/politicas/terminos-envio/terminos-envio.component';
 import { TerminosServicioComponent } from './pagina/politicas/terminos-servicio/terminos-servicio.component';
+import { PerfilComponent } from './pagina/perfil/perfil.component';
 
 
 
@@ -47,6 +48,9 @@ export const routes: Routes = [
                 component:RegistroComponent
             },
         ],
+    },
+    {path: 'perfil',
+        component:PerfilComponent
     },
     {
         path: 'politica',

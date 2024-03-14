@@ -92,7 +92,7 @@ export class RegistroComponent {
         // Si el registro es correcto se envian datos a firebase y redirige al usuario a inicio
         try {
           const userCredentials = await this.AutenticadorService.registroCorreoContraseña(credencial);
-          this. _router.navigateByUrl('/')
+          this. _router.navigateByUrl('perfil')
 
         } 
         // Si el registro no es correcto envia error

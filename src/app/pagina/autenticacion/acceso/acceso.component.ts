@@ -88,7 +88,7 @@ export class AccesoComponent {
   try {
     await this.AutenticadorService.accesoCorreoContraseña(credencial);
   
-    this.router.navigateByUrl('/')
+    this.router.navigateByUrl('perfil')
 
   } catch (error) {
     console.error(error);
