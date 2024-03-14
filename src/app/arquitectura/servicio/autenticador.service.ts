@@ -40,5 +40,10 @@ export class AutenticadorService {
   }
 
 
+  //DESLOGUEO
+  cerrarSesion(): Promise<void>{
+    return this.autenticador.signOut()
+  }
+
   constructor() { }
 }

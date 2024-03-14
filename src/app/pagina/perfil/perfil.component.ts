@@ -18,5 +18,12 @@ export class PerfilComponent {
 
   private authservice = inject(AutenticadorService);
 
-  
+  async cerrarSesion(): Promise<void> {
+    try {
+      await this.authservice.cerrarSesion();
+      this._router.navigateByUrl('/autenticacion/acceso');
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }

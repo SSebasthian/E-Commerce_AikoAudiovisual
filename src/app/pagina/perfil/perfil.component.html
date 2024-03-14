@@ -18,7 +18,7 @@
               <li><a [routerLink]="['/carrito']">Carrito</a></li>
               <li><a [routerLink]="['/Error404Component']">Compras Realizadas</a></li>
               <!-- CERRAR SESION -->
-              <li><a>Cerrar sesion</a></li>
+              <li><a  (click)="cerrarSesion()" class="botonCerrar">Cerrar sesion</a></li>
           </ul>
       </div>
   </div>
