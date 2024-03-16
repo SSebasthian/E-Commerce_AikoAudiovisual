@@ -5,36 +5,36 @@
 <div class="contenedor-nuevoProducto">
 
   <h2>Registro <span>Producto</span></h2>
-  <form id="form-registro-producto">
+  <form id="form-registro-producto" [formGroup]="formularioProducto" (ngSubmit)="registrarProducto()">
     <div class="contenido">
         <div class="contenido-formulario">
             <p>
               <label>Categoria</label>
-              <input class="opcionForm" type="text">
+              <input class="opcionForm" type="text" formControlName="categoria">
             </p>
             <p>
               <label>Titulo</label>
-              <input class="opcionForm" type="text">
+              <input class="opcionForm" type="text" formControlName="titulo">
             </p>
             <p>
               <label>Unidades Disponibles</label>
-              <input class="opcionForm" type="number" min="1">
+              <input class="opcionForm" type="number" min="1" formControlName="stock">
             </p>
             <p>
               <label>Precio Venta</label>
-              <input class="opcionForm" type="number" min="0">
+              <input class="opcionForm" type="number" min="0" formControlName="precio">
               
             </p>
             <p class="espacioTotal">    
               <label>Descripcion</label>
-              <textarea class="opcionForm" rows="3"></textarea>
+              <textarea class="opcionForm" rows="3" formControlName="descripcion"></textarea>
             </p>
         </div>
         <div class="contenedor-imagen">
             <h3>Añadir Imagen</h3>
             <div class="contenido-img">
               <mat-icon class="icono-img-prod">image</mat-icon>
-                <input type="file" id="archivo-producto">
+                <input type="file" id="archivo-producto" formControlName="imagen">
             </div>
         </div>
       <div class="contenedor-boton">
