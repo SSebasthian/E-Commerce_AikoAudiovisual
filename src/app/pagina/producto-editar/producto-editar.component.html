@@ -34,9 +34,12 @@
             <h3>Añadir Imagen</h3>
             <div class="contenido-img">
               <mat-icon class="icono-img-prod">image</mat-icon>
-                <input type="file" id="archivo-producto" formControlName="imagen">
+                <input (change)="imgRecibida($event)" type="file" id="archivo-producto" formControlName="imagen">
+                <div *ngIf="visualizarImagenIngresada">
+                  <img [src]="visualizarImagenIngresada" alt="Imagen seleccionada">
+                </div>
             </div>
-        </div>
+          </div>
       <div class="contenedor-boton">
         <input type="submit" value="Agregar Produducto" id="registroProductoBotton">
       </div>

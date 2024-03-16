@@ -118,6 +118,18 @@
     color: #fff;
 }
 
+.contenedor-imagen .contenido-img img{
+    position: absolute;
+    top: 15%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 87%;
+    height: 70%;
+    z-index: 1;
+}
+
 
 /* CONTENIDO BOTON AGREGAR PRODUCTO */
 

@@ -1,8 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ProductoService } from '../../arquitectura/servicio/producto.service';
+import { Storage, getDownloadURL, ref, uploadBytesResumable } from '@angular/fire/storage';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -19,8 +21,16 @@ import { ProductoService } from '../../arquitectura/servicio/producto.service';
 
 export class ProductoEditarComponent {
 
-  formularioProducto: FormGroup;
 
+  // importa storage
+  private storage: Storage= inject(Storage);
+  // observables storage
+  tomarUrlImg$!: Observable<String>;
+  //funcion visualizar imagen ingresada
+  visualizarImagenIngresada : any;
+
+  
+  formularioProducto: FormGroup;
 
   constructor(private productoservicio: ProductoService){
     this.formularioProducto = new FormGroup({
@@ -33,10 +43,52 @@ export class ProductoEditarComponent {
     })
   }
 
+  // Sube producto a firebase con lo digilenciado en form
   async registrarProducto() {
     console.log(this.formularioProducto.value)
     const productoGuardado = await this.productoservicio.agregarProducto(this.formularioProducto.value)
     console.log(productoGuardado);
+    
+  }
+  // mapea imagen y lo envia a subirImg
+  imgRecibida(event:any){
+    const archivoSeleccionado:File = event.target.files[0];
+    this.subirImg(archivoSeleccionado);
+    // visualiza la imagen que se ingresa en registrar producto
+    if (archivoSeleccionado) {
+      const lector = new FileReader();
+      lector.onload = (e: any) => {
+        this.visualizarImagenIngresada = e.target.result;
+      };
+      lector.readAsDataURL(archivoSeleccionado);
+    }
+  }
+  //sube imagen a Storage
+  async subirImg(file:File){
+    const rutaArchivo = `ImagenProducto/${file.name}`;
+    const rutaReferencia = ref(this.storage, rutaArchivo);
+    const subirArchivo = uploadBytesResumable(rutaReferencia, file);
+
+    // lee el esado del proceso
+    subirArchivo.on('state_changed',
+      (snapshot) =>{
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log('Proceso de carga', progress);
+      },
+      (error) =>{
+        console.error('Error al cargar el archivo', error)
+      },
+      async () =>{
+        console.log("El archivo se Subio Exitosamente");
+        const url = await getDownloadURL(rutaReferencia);
+        console.log("URL del archivo", url);
+
+        // Asignar la URL al FormControl de la imagen en el formulario
+        this.formularioProducto.patchValue({
+          imagen: url
+        });
+      }
+    )
   }
 }
 
