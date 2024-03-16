@@ -4,6 +4,7 @@ import { ServicioComponent } from './pagina/servicio/servicio-principal/servicio
 import { ContactoComponent } from './pagina/contacto/contacto.component';
 import { ProductoComponent } from './pagina/producto/producto.component';
 import { ProductoDetalleComponent } from './pagina/producto-detalle/producto-detalle.component';
+import { ProductoEditarComponent } from './pagina/producto-editar/producto-editar.component';
 import { CarritoComponent } from './pagina/carrito/carrito.component';
 import { AccesoComponent } from './pagina/autenticacion/acceso/acceso.component';
 import { RegistroComponent } from './pagina/autenticacion/registro/registro.component';
@@ -38,6 +39,9 @@ export const routes: Routes = [
     },
     {path: 'producto-detalle',
         component:ProductoDetalleComponent
+    },
+    {path: 'producto-editar',
+        component:ProductoEditarComponent
     },
     {path: 'carrito',
         component:CarritoComponent
