@@ -46,4 +46,20 @@
     </div>
   </form>
 </div>
+<br><br>
+<hr>
+<br>
+<h2 class="titulo-productos-agregados"><span>Productos</span> Agregados</h2>
+<div class="contenedor-articulos-registrados">
+  <div class="productos-registrados" *ngFor=" let producto of productos"> 
+    <img [src]="producto.imagen" alt="{{producto.titulo}}">
+    <div class="contendo-producto-registrado"> 
+      <h1 class="titulo">{{producto.titulo}} <br> {{producto.categoria}}</h1>
+      <p class="descripcion">{{producto.descripcion}}</p>
+      <p class="precio-cantidad"> Precio ${{producto.precio}} <br> Stock {{producto.stock}}</p>
+    </div>
+    
+  </div>
+</div>
+<br><br>
 

@@ -3,6 +3,7 @@ import { Component, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ProductoService } from '../../arquitectura/servicio/producto.service';
+import Producto from '../../arquitectura/interface/producto.interface';
 import { Storage, getDownloadURL, ref, uploadBytesResumable } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 
@@ -31,6 +32,8 @@ export class ProductoEditarComponent {
 
   
   formularioProducto: FormGroup;
+  productos: Producto[];
+
 
   constructor(private productoservicio: ProductoService){
     this.formularioProducto = new FormGroup({
@@ -40,21 +43,43 @@ export class ProductoEditarComponent {
       precio: new FormControl(),
       descripcion: new FormControl(),
       imagen: new FormControl(),
-    })
+    }),
+    // Definir Productos para llamarlos
+    this.productos = [{
+      categoria: '',
+      titulo:'',
+      stock:0,
+      precio: 0,
+      descripcion:'',
+      imagen: '',
+      fecha: new Date(),
+    }];
   }
 
+  
+
+  // REGISTRAR PRODUCTOS
   // Sube producto a firebase con lo digilenciado en form
   async registrarProducto() {
     console.log(this.formularioProducto.value)
     const productoGuardado = await this.productoservicio.agregarProducto(this.formularioProducto.value)
     console.log(productoGuardado);
-    
   }
+
+  // OBTENER PRODUCTOS
+  ngOnInit(): void {
+    this.productoservicio.obtenerProducto().subscribe(producto => {
+      this.productos = producto;
+    })
+  } 
+
+
+  // SUBIR IMAGEN A STORAGE  
   // mapea imagen y lo envia a subirImg
   imgRecibida(event:any){
     const archivoSeleccionado:File = event.target.files[0];
     this.subirImg(archivoSeleccionado);
-    // visualiza la imagen que se ingresa en registrar producto
+    // visualiza la imagen que se ingresa ena registrar producto
     if (archivoSeleccionado) {
       const lector = new FileReader();
       lector.onload = (e: any) => {
@@ -87,7 +112,9 @@ export class ProductoEditarComponent {
         this.formularioProducto.patchValue({
           imagen: url
         });
+        
       }
+      
     )
   }
 }

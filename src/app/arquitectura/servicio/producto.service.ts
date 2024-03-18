@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Firestore} from '@angular/fire/firestore';
+import { Firestore, collectionData } from '@angular/fire/firestore';
 
 import { addDoc, collection } from 'firebase/firestore';
 import Producto from '../interface/producto.interface';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,12 @@ export class ProductoService {
     return addDoc(productoReferencia, producto);
   }
 
-  
+  obtenerProducto(): Observable<Producto[]>{
+    const productoReferencia = collection(this.firestore, 'producto');
+    return collectionData(productoReferencia,{
+      idField: 'id'
+    }) as Observable<Producto[]>;
+  }
   
  
 
