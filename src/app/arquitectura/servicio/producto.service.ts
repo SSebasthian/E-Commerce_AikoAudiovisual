@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collectionData, doc, deleteDoc } from '@angular/fire/firestore';
+import { Firestore, collectionData, doc, deleteDoc, updateDoc } from '@angular/fire/firestore';
 
 import { addDoc, collection } from 'firebase/firestore';
 import Producto from '../interface/producto.interface';
@@ -34,5 +34,10 @@ export class ProductoService {
     return deleteDoc(productoEliminar);
   }
 
+  // Actualiza un producto existente en Firestore
+  actualizarProducto(productoId: string, data: Partial<Producto>) {
+    const productoReferencia = doc(this.firestore, `producto/${productoId}`);
+    return updateDoc(productoReferencia, data);
+  }
   
 }

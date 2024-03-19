@@ -61,7 +61,13 @@ export class ProductoEditarComponent {
   // REGISTRAR PRODUCTOS
   // Sube producto a firebase con lo digilenciado en form
   async registrarProducto() {
-    const productoGuardado = await this.productoservicio.agregarProducto(this.formularioProducto.value)
+    if (this.productoSeleccionado && this.productoSeleccionado.id) {
+      // Si hay un producto seleccionado, se actualiza en lugar de agregar uno nuevo
+      await this.productoservicio.actualizarProducto(this.productoSeleccionado.id, this.formularioProducto.value);
+    } else {
+      // Si no hay un producto seleccionado, se agrega un nuevo producto
+      await this.productoservicio.agregarProducto(this.formularioProducto.value);
+    }
     this.limpiarFormulario();
   }
 
@@ -99,7 +105,7 @@ export class ProductoEditarComponent {
       imagen: producto.imagen
     });
     // Establece la imagen del producto seleccionado en visualizarImagenIngresada
-    this.visualizarImagenIngresada = producto.imagen;
+    this.visualizarImagenIngresada = producto.imagen;   
   }
 
 
@@ -143,7 +149,7 @@ export class ProductoEditarComponent {
         this.formularioProducto.patchValue({
           imagen: url
         });
-        
+
       }
       
     )
