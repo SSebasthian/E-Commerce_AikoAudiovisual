@@ -226,6 +226,17 @@
     font-size: 3em;
     font-weight: 500;
 }
+.productos-registrados .borrar{
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    width: 70%;
+    margin: auto;
+    background: #e30808be;
+    color: #fff;
+    cursor: pointer;
+}
 
 
 .titulo-productos-agregados span{

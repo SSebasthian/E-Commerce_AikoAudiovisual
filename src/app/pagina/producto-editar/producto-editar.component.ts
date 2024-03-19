@@ -73,6 +73,11 @@ export class ProductoEditarComponent {
     })
   } 
 
+   // ELIMINAR PRODUCTOS
+   async onClickBorrar(producto: Producto){
+    const response = await this.productoservicio.deleteProducto(producto);
+  }
+
 
   // SUBIR IMAGEN A STORAGE  
   // mapea imagen y lo envia a subirImg
