@@ -34,9 +34,9 @@
             <h3>Añadir Imagen</h3>
             <div class="contenido-img">
               <mat-icon class="icono-img-prod">image</mat-icon>
-                <input (change)="imgRecibida($event)" type="file" id="archivo-producto" formControlName="imagen">
+                <input (change)="imgRecibida($event)" type="file" id="archivo-producto" >
                 <div *ngIf="visualizarImagenIngresada">
-                  <img [src]="visualizarImagenIngresada" alt="Imagen seleccionada">
+                  <img [src]="visualizarImagenIngresada" alt="Imagen seleccionada" formControlName="imagen">
                 </div>
             </div>
           </div>
@@ -57,6 +57,7 @@
       <h1 class="titulo">{{producto.titulo}} <br> {{producto.categoria}}</h1>
       <p class="descripcion">{{producto.descripcion}}</p>
       <p class="precio-cantidad"> Precio ${{producto.precio}} <br> Stock {{producto.stock}}</p>
+      <button class="editar" (click)="editarProducto(producto)">Editar</button>
       <button class="borrar" (click)="onClickBorrar(producto)">Eliminar</button>
     </div>
     

@@ -237,7 +237,17 @@
     color: #fff;
     cursor: pointer;
 }
-
+.productos-registrados .editar{
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    width: 70%;
+    margin: auto;
+    background: #177efcbe;
+    color: #fff;
+    cursor: pointer;
+}
 
 .titulo-productos-agregados span{
     color: #6433DB;

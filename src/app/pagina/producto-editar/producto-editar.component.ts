@@ -76,9 +76,8 @@ export class ProductoEditarComponent {
    async onClickBorrar(producto: Producto){
     const response = await this.productoservicio.deleteProducto(producto);
   }
-
   
-// METODO PARA LIMPIAR EL FORMULARIO Y EL PRODUCTO SELECCIONADO
+  // METODO PARA LIMPIAR EL FORMULARIO Y EL PRODUCTO SELECCIONADO
   // Agrega una variable para almacenar el producto seleccionado para editar
   productoSeleccionado: Producto | null = null;
 
@@ -86,6 +85,24 @@ export class ProductoEditarComponent {
     this.productoSeleccionado = null;
     this.formularioProducto.reset();
   }
+
+  //EDITAR PRODUCTO (TRAE EL PRODUCTO SELECCIONADO AL FORMULARIO)
+  editarProducto(producto: Producto) {
+    this.productoSeleccionado = producto;
+    // Establece los valores de los controles del formulario con los datos del producto seleccionado
+    this.formularioProducto.patchValue({
+      categoria: producto.categoria,
+      titulo: producto.titulo,
+      stock: producto.stock,
+      precio: producto.precio,
+      descripcion: producto.descripcion,
+      imagen: producto.imagen
+    });
+    // Establece la imagen del producto seleccionado en visualizarImagenIngresada
+    this.visualizarImagenIngresada = producto.imagen;
+  }
+
+
 
 
   // SUBIR IMAGEN A STORAGE  
