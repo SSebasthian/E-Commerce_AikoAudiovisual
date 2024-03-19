@@ -90,6 +90,7 @@ export class ProductoEditarComponent {
   limpiarFormulario() {
     this.productoSeleccionado = null;
     this.formularioProducto.reset();
+    this.visualizarImagenIngresada = null; // Borra la imagen visualizada
   }
 
   //EDITAR PRODUCTO (TRAE EL PRODUCTO SELECCIONADO AL FORMULARIO)
