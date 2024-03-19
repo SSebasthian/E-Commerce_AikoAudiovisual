@@ -61,9 +61,8 @@ export class ProductoEditarComponent {
   // REGISTRAR PRODUCTOS
   // Sube producto a firebase con lo digilenciado en form
   async registrarProducto() {
-    console.log(this.formularioProducto.value)
     const productoGuardado = await this.productoservicio.agregarProducto(this.formularioProducto.value)
-    console.log(productoGuardado);
+    this.limpiarFormulario();
   }
 
   // OBTENER PRODUCTOS
@@ -76,6 +75,16 @@ export class ProductoEditarComponent {
    // ELIMINAR PRODUCTOS
    async onClickBorrar(producto: Producto){
     const response = await this.productoservicio.deleteProducto(producto);
+  }
+
+  
+// METODO PARA LIMPIAR EL FORMULARIO Y EL PRODUCTO SELECCIONADO
+  // Agrega una variable para almacenar el producto seleccionado para editar
+  productoSeleccionado: Producto | null = null;
+
+  limpiarFormulario() {
+    this.productoSeleccionado = null;
+    this.formularioProducto.reset();
   }
 
 
