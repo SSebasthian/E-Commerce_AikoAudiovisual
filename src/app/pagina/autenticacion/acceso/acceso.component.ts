@@ -87,7 +87,9 @@ export class AccesoComponent {
   };
   try {
     await this.AutenticadorService.accesoCorreoContraseña(credencial);
-  
+    const usuarioUID = await this.AutenticadorService.guardaIDusuario();
+    console.log(usuarioUID)
+
     this.router.navigateByUrl('perfil')
 
   } catch (error) {

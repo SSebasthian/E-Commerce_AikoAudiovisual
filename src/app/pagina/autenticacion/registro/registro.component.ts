@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 import { AutenticadorService, Credencial } from '../../../arquitectura/servicio/autenticador.service';
+import Cliente from '../../../arquitectura/interface/cliente.interface';
 
 interface registroForm{
   name: FormControl<string>;
@@ -92,6 +93,19 @@ export class RegistroComponent {
         // Si el registro es correcto se envian datos a firebase y redirige al usuario a inicio
         try {
           const userCredentials = await this.AutenticadorService.registroCorreoContraseña(credencial);
+          // Obtenemos el UID del usuario registrado
+          const usuarioUID = await this.AutenticadorService.guardaIDusuario();
+          // Creamos un objeto Cliente con los datos del formulario
+          const cliente: Cliente = {
+            id: usuarioUID || '',
+            usuario: this.formularioRegistro.value.name || '',
+            correo: this.formularioRegistro.value.email || '',
+            contraseña: this.formularioRegistro.value.password || ''
+          };
+
+          // Guardamos el usuario en Firestore
+          await this.AutenticadorService.guardarUsuarioEnFirestore(cliente);
+          console.log(usuarioUID)
           this. _router.navigateByUrl('perfil')
 
         } 

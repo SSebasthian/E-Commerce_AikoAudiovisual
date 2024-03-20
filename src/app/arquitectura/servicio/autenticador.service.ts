@@ -6,6 +6,8 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from '@angular/fire/auth';
+import { Firestore, addDoc, collection } from '@angular/fire/firestore';
+import Cliente from '../interface/cliente.interface';
 
 // INTERFACE PARA CORREO Y CONTRASEÑA
 export interface Credencial {
@@ -19,6 +21,10 @@ export interface Credencial {
 })
 
 export class AutenticadorService {
+
+  // SE AGREGA FIREBASE PARA REGISTRAR EL USUARIO REGISTRADO EN BASE DE DATOS
+  constructor(private firestore: Firestore) { }
+
   private autenticador : Auth = inject(Auth);
 
   // SE VALIDA SI EL USUARIO ESTA LOGUEADO O NO
@@ -48,5 +54,24 @@ export class AutenticadorService {
     return this.autenticador.signOut()
   }
 
-  constructor() { }
+
+  // SE AGREGA USUARIO REGISTRADO A BASE DE DATOS
+
+  // SE TOMA EL ID DE USUARIO REGISTRADO
+  async guardaIDusuario(){
+    const user = await this.autenticador.currentUser;
+    if (user === undefined){
+      return null;
+    } else{
+      return user!.uid
+    }
+  }
+
+  // SE GUARDA EL USUARIO EN BASE DE DATOS
+  async guardarUsuarioEnFirestore(cliente: Cliente) {
+    const productoReferencia = collection(this.firestore, 'cliente');
+    return addDoc(productoReferencia, cliente);
+  }
+
+  
 }
