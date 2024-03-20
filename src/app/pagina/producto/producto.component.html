@@ -1,1 +1,36 @@
-<p>producto works!</p>
+<article class="articulos">
+  
+    <div class="contenido" *ngFor=" let producto of productos"> 
+      <div class="tarjeta">
+        <div class="cajaImg">
+          <img [src]="producto.imagen" alt="{{producto.titulo}}">
+          <ul class="iconos">
+            <li>
+              <mat-icon> add_shopping_cart </mat-icon>
+              <span>Agregar a Tienda</span>
+            </li>
+            <li>
+              <mat-icon>visibility</mat-icon>
+              <span>Ver Detalle</span>
+            </li>
+          </ul>
+        </div>
+        <div class="descripcion">
+          <div class="productoNombre">
+            <h3>{{producto.titulo}}</h3>
+          </div>
+          <div class="precio">
+            <h2>$ {{producto.precio}}</h2>
+            <div class="estrella">
+              <mat-icon class="estrellaDorada">grade</mat-icon>
+              <mat-icon class="estrellaDorada">grade</mat-icon>
+              <mat-icon class="estrellaDorada">grade</mat-icon>
+              <mat-icon class="estrellaDorada">grade</mat-icon>
+              <mat-icon class="estrellaGris">grade</mat-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+  <br><br>
