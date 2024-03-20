@@ -69,8 +69,8 @@ export class AutenticadorService {
 
   // SE GUARDA EL USUARIO EN BASE DE DATOS
   async guardarUsuarioEnFirestore(cliente: Cliente) {
-    const productoReferencia = collection(this.firestore, 'cliente');
-    return addDoc(productoReferencia, cliente);
+    const clienteReferencia = collection(this.firestore, 'cliente');
+    return addDoc(clienteReferencia, cliente);
   }
 
   

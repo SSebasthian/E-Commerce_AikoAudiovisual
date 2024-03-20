@@ -41,7 +41,8 @@ export const routes: Routes = [
         component:ProductoDetalleComponent
     },
     {path: 'producto-editar',
-        component:ProductoEditarComponent
+        component:ProductoEditarComponent,
+        canActivate: [estadoPrivado]
     },
     {path: 'carrito',
         component:CarritoComponent
