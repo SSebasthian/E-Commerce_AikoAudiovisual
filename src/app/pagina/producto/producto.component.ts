@@ -3,6 +3,7 @@ import Producto from '../../arquitectura/interface/producto.interface';
 import { ProductoService } from '../../arquitectura/servicio/producto.service';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-producto',
@@ -10,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     CommonModule,
     MatIconModule,
+    RouterLink
   ],
   templateUrl: './producto.component.html',
   styleUrl: './producto.component.css'
