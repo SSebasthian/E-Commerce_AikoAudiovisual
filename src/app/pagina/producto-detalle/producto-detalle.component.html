@@ -1,1 +1,12 @@
-<p>producto-detalle works!</p>
+
+
+<div *ngIf="productoSeleccionado">
+    <p>ID: {{productoSeleccionado.id}}</p>
+    <p>TITULO: {{ productoSeleccionado.titulo }}</p>
+    <p>CATEGORIA: {{productoSeleccionado.categoria}}</p>
+    <p>PRECIO: ${{ productoSeleccionado.precio }}</p>
+    <p>STOCK: {{productoSeleccionado.stock}}</p>
+    <p>DESCRIPCION: {{ productoSeleccionado.descripcion }}</p>
+    <img src="{{productoSeleccionado.imagen}}" alt="{{ productoSeleccionado.titulo }}" width="250" >
+    
+  </div>
