@@ -1,12 +1,58 @@
-
-
-<div *ngIf="productoSeleccionado">
-    <p>ID: {{productoSeleccionado.id}}</p>
-    <p>TITULO: {{ productoSeleccionado.titulo }}</p>
-    <p>CATEGORIA: {{productoSeleccionado.categoria}}</p>
-    <p>PRECIO: ${{ productoSeleccionado.precio }}</p>
-    <p>STOCK: {{productoSeleccionado.stock}}</p>
-    <p>DESCRIPCION: {{ productoSeleccionado.descripcion }}</p>
-    <img src="{{productoSeleccionado.imagen}}" alt="{{ productoSeleccionado.titulo }}" width="250" >
-    
-  </div>
+<section class="producto-detalle">
+    <div class="contenido" *ngIf="productoSeleccionado">
+        
+        <div class="contenedor-img">
+            <img src="{{productoSeleccionado.imagen}}" alt="{{ productoSeleccionado.titulo }}">
+        </div>
+        <div class="contenedor-producto">
+            <div class="categoria">
+                <h2>Categoria {{productoSeleccionado.categoria}}</h2>
+            </div>
+            <div class="titulo">
+                <h2><b>{{ productoSeleccionado.titulo }}</b></h2>
+            </div>
+            <div class="precio"> 
+                <p><span>${{ productoSeleccionado.precio }}</span> IVA INCLUIDO</p>
+                <p>Los <a [routerLink]="['/politica/terminos-envio']">gastos de envío </a>se calculan en la pantalla de pago.</p>
+            </div> 
+            <div class="valoracion">
+                <br>
+                <div class="estrella">
+                    <mat-icon class="estrellaDorada">grade</mat-icon>
+                    <mat-icon class="estrellaDorada">grade</mat-icon>
+                    <mat-icon class="estrellaDorada">grade</mat-icon>
+                    <mat-icon class="estrellaDorada">grade</mat-icon>
+                    <mat-icon class="estrellaGris">grade</mat-icon>
+                </div>
+            </div>
+            <div class="referencia">
+                <p>Referencia del Producto: <span>{{productoSeleccionado.id}}</span></p>
+            </div>
+        
+            <div class="cantidad">
+                <div class="stock">
+                    <p>Unidades Disponibles: <span>{{productoSeleccionado.stock}}</span></p>
+                </div>
+                <div class="tituloCantidad">
+                    <p>Cantidad</p>
+                </div>
+                <div class="contador">
+                    <button mat-button (click)="decrementarCantidad()" [disabled]="cantidad === 1 || !productoSeleccionado">
+                        <mat-icon>remove</mat-icon>
+                    </button>
+                    <input type="number" readonly  [(ngModel)]="cantidad" (ngModelChange)="validarCantidad()" min="1" />
+                    <button mat-button (click)="incrementarCantidad()" [disabled]="!productoSeleccionado || cantidad >= productoSeleccionado.stock">
+                        <mat-icon>add</mat-icon>
+                    </button>
+                </div> 
+            </div>
+            <div class="descripcion">
+                <p> {{ productoSeleccionado.descripcion }}</p>
+            </div>
+            <div class="agregarCarrito">
+                <a >Agregar al Carrito</a>
+            </div>
+        </div>   
+    </div>
+</section>
+<br><br>
