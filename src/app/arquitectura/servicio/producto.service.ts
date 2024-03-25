@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collectionData, doc, deleteDoc, updateDoc } from '@angular/fire/firestore';
+import { Firestore, collectionData, doc, deleteDoc, updateDoc, query, where } from '@angular/fire/firestore';
 
 import { addDoc, collection } from 'firebase/firestore';
 import Producto from '../interface/producto.interface';
@@ -40,4 +40,9 @@ export class ProductoService {
     return updateDoc(productoReferencia, data);
   }
   
+  // Obtiene producto pr categoria firebase
+  obtenerProductosPorCategoria(categoria: string): Observable<Producto[]> {
+    const productoCategoria = query(collection(this.firestore, 'producto'), where('categoria', '==', categoria));
+    return collectionData(productoCategoria, { idField: 'id' }) as Observable<Producto[]>;
+  }
 }

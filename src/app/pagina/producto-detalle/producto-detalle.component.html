@@ -55,4 +55,28 @@
         </div>   
     </div>
 </section>
-<br><br>
+<h2 class="titulo-producto-opcion">También Podría <span>Gustarte</span></h2>
+<section class="producto-opcion">
+    <div class="contenido-opcion" *ngFor="let producto of productosRelacionadosCategotia">
+        <div class="opcion-imagen">
+            <img src="{{producto.imagen}}" alt="{{ producto.titulo }}">
+            <div class="opciones"> 
+                <button class="verDetalle" (click)="mostrarDetalle(producto)" routerLink="/producto-detalle">Ver Detalle</button><br>
+                <button class="agregarCarrito">Agregar a Carrito</button>
+              </div>
+        </div>
+        <div class="opcion-producto">
+            <div class="opcion-categoria"> 
+                <p>
+                    {{producto.categoria}}
+                </p>
+            </div>
+            <div class="opcion-titulo">
+                <p>{{producto.titulo}}</p>
+            </div>
+            <div class="opcion-precio">
+                <p>$ {{producto.precio}}</p>
+            </div>
+        </div>
+      </div>
+</section>
