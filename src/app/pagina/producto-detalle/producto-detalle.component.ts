@@ -74,6 +74,7 @@ export class ProductoDetalleComponent {
       }
     }
     return muestra;
+
   }
 
   // ESTE METODO INGREMENTA LA CANTIDAD EN EL ARTICULO
@@ -103,5 +104,8 @@ export class ProductoDetalleComponent {
       console.log('Producto seleccionado:', this.productoSeleccionado);
       localStorage.setItem('productoSeleccionado', JSON.stringify(this.productoSeleccionado));
       this.obtenerProductosRelacionados();
+
+      // Scroll hasta la parte superior de la página
+      window.scrollTo(0, 100);
   }
 }
