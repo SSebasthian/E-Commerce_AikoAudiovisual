@@ -1,6 +1,6 @@
 .articulos{
     padding-top: 50px;
-    width: 85%;
+    width: 50%;
     margin: auto;
     min-height: 100vh; 
     display: grid;
@@ -22,6 +22,7 @@
     background: #fff;
     background: rgba(255,255,255,.1);
   box-shadow: 0 0 20px rgba(0,0,0,.2);
+  border-radius: 15px;
 }
 .contenido .tarjeta .cajaImg{
     position: relative;
@@ -132,3 +133,47 @@
 .contenido .tarjeta .descripcion .precio .estrellaGris{
     color: #ccc;
 }
+
+.botones-paginacion{
+    width: 70%;
+    margin: auto;
+}
+.botones-paginacion .contenido-boton{
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+}
+.botones-paginacion .contenido-boton button{
+    padding: 15px;
+    margin-left: 30px;
+    border-radius: 20px;
+    font-weight: 500;
+    background: #6433D8;
+    color: #fff;
+    cursor: pointer;
+}
+.botones-paginacion .contenido-boton button:hover{
+    background: linear-gradient(15deg, #B95CE4, #4F29CC);
+}
+.botones-paginacion .contenido-boton button[disabled]{
+    background: #8d8686;
+    cursor: not-allowed;
+}
+
+
+@media screen and (max-width: 2150px){
+    .articulos{
+        width: 65%;
+    }
+}
+@media screen and (max-width: 1660px){
+    .articulos{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 1350px){
+    .articulos{
+        width: 85%;
+    }
+}
+

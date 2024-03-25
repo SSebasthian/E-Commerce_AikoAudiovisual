@@ -22,6 +22,8 @@ export class ProductoComponent {
   productoSeleccionado: Producto | null = null; // Variable para almacenar el producto Seleccionado
   uidProducto: string | null = null; // Variable para almacenar el ID del producto seleccionado
 
+  productosPorPagina: number = 12;
+  paginaActual: number = 1;
 
   constructor(
     private productoservicio: ProductoService,
@@ -52,6 +54,43 @@ export class ProductoComponent {
     localStorage.setItem('productoSeleccionado', JSON.stringify(this.productoSeleccionado));
   }
 
+  // Método para avanzar a la página siguiente
+  irAPaginaSiguiente(): void {
+    // Verifica si hay una página siguiente disponible
+    if (this.paginaActual < this.totalPaginas) {
+      this.paginaActual++;
+      // Scroll hasta la parte superior de la página
+      window.scrollTo(0, 0);
+    }
+  }
 
+  // Método para retroceder a la página anterior
+  irAPaginaAnterior(): void {
+    // Verifica si hay una página anterior disponible
+    if (this.paginaActual > 1) {
+      this.paginaActual--;
+      // Mueve el scroll hacia arriba de la página
+      window.scrollTo(0, 0);
+    }
+  }
+
+  // Método para calcular el índice de inicio de los productos en la página actual
+  calcularInicio(): number {
+    // Multiplica el número de la página actual menos 1 por el número de productos por página
+    return (this.paginaActual - 1) * this.productosPorPagina;
+  }
+
+  // Método para calcular el índice final de los productos en la página actual
+  calcularFin(): number {
+    // Devuelve el mínimo entre el índice de inicio más el número de productos por página
+    // y la longitud total de la lista de productos
+    return Math.min(this.calcularInicio() + this.productosPorPagina, this.productos.length);
+  }
+
+  // Método para obtener el número total de páginas basado en la cantidad de productos y productos por página
+  get totalPaginas(): number {
+    // Calcula el número total de páginas necesarias para mostrar todos los productos
+    return Math.ceil(this.productos.length / this.productosPorPagina);
+  }
 
 }

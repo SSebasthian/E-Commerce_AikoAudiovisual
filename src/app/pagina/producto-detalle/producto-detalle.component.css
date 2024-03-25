@@ -96,6 +96,11 @@
     background: #6433DB;
     color: #fff;
 }
+.producto-detalle .contenido .contenedor-producto .cantidad .contador button[disabled]{
+    background: #fff;
+    color: #ccc;
+    cursor: not-allowed;
+}
 
 .producto-detalle .contenido .contenedor-producto .cantidad .contador input[type="number"] {
     width: 50px;

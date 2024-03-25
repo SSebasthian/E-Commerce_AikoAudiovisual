@@ -1,6 +1,6 @@
 <article class="articulos">
   
-    <div class="contenido" *ngFor=" let producto of productos"> 
+    <div class="contenido" *ngFor=" let producto of productos.slice(calcularInicio(), calcularFin())"> 
       <div class="tarjeta">
         <div class="cajaImg">
           <img [src]="producto.imagen" alt="{{producto.titulo}}">
@@ -32,5 +32,15 @@
         </div>
       </div>
     </div>
-  </article>
-  <br><br>
+</article>
+<article class="botones-paginacion">
+  <div class="contenido-boton">
+    <button (click)="irAPaginaAnterior()" [disabled]="paginaActual === 1">
+      Página Anterior
+    </button>
+    <button (click)="irAPaginaSiguiente()" [disabled]="paginaActual === totalPaginas">
+      Página Siguiente
+    </button>
+  </div>
+</article>
+<br><br>
