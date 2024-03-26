@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import Producto from '../../arquitectura/interface/producto.interface';
 import { ProductoService } from '../../arquitectura/servicio/producto.service';
+import { CarritoService } from '../../arquitectura/servicio/carrito.service';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
@@ -27,6 +28,7 @@ export class ProductoComponent {
 
   constructor(
     private productoservicio: ProductoService,
+    private carritoService: CarritoService
   ){
       this.productos = [{
       categoria: '',
@@ -92,5 +94,11 @@ export class ProductoComponent {
     // Calcula el número total de páginas necesarias para mostrar todos los productos
     return Math.ceil(this.productos.length / this.productosPorPagina);
   }
+
+  // Metodo para agregar el producto al LocalStorage
+  agregarAlCarrito(producto: Producto, cantidad: number) {
+    this.carritoService.agregarAlCarrito(producto, cantidad);
+  }
+
 
 }

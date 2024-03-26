@@ -1,1 +1,19 @@
-<p>carrito works!</p>
+<div *ngIf="carritoService.carrito.length > 0">
+    <h1>
+        <mat-icon>card_travel</mat-icon> BOLSA DE COMPRAS
+      </h1>
+    <ul>
+      <li *ngFor="let productoCarrito of carritoService.carrito">
+        <div>
+          <img [src]="productoCarrito.producto.imagen" alt="{{ productoCarrito.producto.titulo }}" width="200">
+          <h3>{{ productoCarrito.producto.titulo }}</h3>
+          <p>Cantidad: {{ productoCarrito.cantidad }}</p>
+          <p>Precio unitario: $ {{ productoCarrito.producto.precio }}</p>
+          <p>Precio total: $ {{ productoCarrito.producto.precio * productoCarrito.cantidad }}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="carritoService.carrito.length === 0">
+    <p>No hay productos en el carrito.</p>
+  </div>

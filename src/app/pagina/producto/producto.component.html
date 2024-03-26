@@ -6,7 +6,7 @@
           <img [src]="producto.imagen" alt="{{producto.titulo}}">
           <ul class="iconos">
             <li>
-              <mat-icon> add_shopping_cart </mat-icon>
+              <mat-icon (click)="agregarAlCarrito(producto, 1)"> add_shopping_cart </mat-icon>
               <span>Agregar a Tienda</span>
             </li>
             <li>
