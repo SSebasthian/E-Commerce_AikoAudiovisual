@@ -24,6 +24,6 @@ export class CarritoComponent {
     // Cargar el carrito desde el almacenamiento local al iniciar el componente
     this.carritoService.cargarCarritoLocalStorage();
   }
-  
 
+  
 }

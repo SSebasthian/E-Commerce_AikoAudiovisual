@@ -41,7 +41,12 @@ export class CarritoService {
       }
       // Después de agregar el producto, guardar el carrito en el almacenamiento local
       this.guardarCarritoLocalStorage();
+      alert("Se Agrego El Producto Al Carrito");
     } 
+
+    
+
+    
 
 }
 

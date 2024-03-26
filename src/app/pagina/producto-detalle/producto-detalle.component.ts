@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms'; 
 import { RouterLink } from '@angular/router';
 import { ProductoService } from '../../arquitectura/servicio/producto.service';
+import { CarritoService } from '../../arquitectura/servicio/carrito.service';
 
 
 
@@ -25,7 +26,10 @@ export class ProductoDetalleComponent {
   productosRelacionadosCategotia: Producto[] = [];
   cantidad: number = 1; // Inicializa la cantidad en 1
 
-  constructor(private productoService: ProductoService) {}
+  constructor(
+      private productoService: ProductoService,
+      private carritoService: CarritoService
+    ) {}
 
     // ME ACTUALIZA LA PAGINA DETALLE CON EL LOCALSTORAGE
     ngOnInit(): void {
@@ -108,4 +112,32 @@ export class ProductoDetalleComponent {
       // Scroll hasta la parte superior de la página
       window.scrollTo(0, 100);
   }
+
+  agregarAlCarrito() {
+    if (this.productoSeleccionado && this.cantidad > 0) {
+      // Verificar si la cantidad seleccionada es mayor que el stock disponible
+      if (this.cantidad <= this.productoSeleccionado.stock) {
+        // Agregar el producto al carrito
+        this.carritoService.agregarAlCarrito(this.productoSeleccionado, this.cantidad);
+        // Restablecer la cantidad a 1 después de agregar el producto
+        this.cantidad = 1;
+        
+      } else {
+        alert("No hay suficiente stock disponible");
+      }
+    } else {
+      alert("Seleccione una cantidad válida");
+    }
+  }
+  
+  // Metodo para agregar el producto al LocalStorage
+  agregarAlCarritoProductoOpcion(producto: Producto, cantidad: number) {
+    this.carritoService.agregarAlCarrito(producto, cantidad);
+  }
+
+  // Método para agregar un producto relacionado al carrito
+  agregarProductoAlCarrito(producto: Producto) {
+    this.carritoService.agregarAlCarrito(producto, 1); // Agrega un solo producto
+  }
+ 
 }

@@ -50,7 +50,7 @@
                 <p> {{ productoSeleccionado.descripcion }}</p>
             </div>
             <div class="agregarCarrito">
-                <a >Agregar al Carrito</a>
+                <a (click)="agregarAlCarrito()">Agregar al Carrito</a>
             </div>
         </div>   
     </div>
@@ -62,7 +62,7 @@
             <img src="{{producto.imagen}}" alt="{{ producto.titulo }}">
             <div class="opciones"> 
                 <button class="verDetalle" (click)="mostrarDetalle(producto)" routerLink="/producto-detalle">Ver Detalle</button><br>
-                <button class="agregarCarrito">Agregar a Carrito</button>
+                <button class="agregarCarrito" (click)="agregarAlCarritoProductoOpcion(producto, 1)">Agregar a Carrito</button>
               </div>
         </div>
         <div class="opcion-producto">

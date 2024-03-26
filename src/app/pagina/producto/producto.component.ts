@@ -100,5 +100,9 @@ export class ProductoComponent {
     this.carritoService.agregarAlCarrito(producto, cantidad);
   }
 
+  // Método para agregar un producto relacionado al carrito
+  agregarProductoAlCarrito(producto: Producto) {
+    this.carritoService.agregarAlCarrito(producto, 1); // Agrega un solo producto
+  }
 
 }
