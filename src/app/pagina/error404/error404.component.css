@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Creepster&display=swap');
+
+.contenedorError{
+    width: 90%;
+    min-height: 60vh;
+    margin: auto;
+    position: relative;
+}
+.contenedorError h2{
+    padding-top: 100px;
+    font-size: 45px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.contenedorError .error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedorError .error .alert404{
+    position: relative;
+}
+.contenedorError .error .alert404 h3{
+    color: #000;
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15em;
+    text-shadow: -25px 25px 40px rgba(103, 0, 132, 0.674);
+}
+.contenedorError .error .alert404 h3 .espacio{
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 300px;
+}
+.contenedorError .error .alert404 h3 .espacio img{
+    width: 110%;
+    animation: girar 20s linear infinite;
+}
+
+@keyframes girar {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
+
+.mensaje-error{
+    width: 100%;
+    margin: auto;
+    font-size: 20px;
+    font-weight: 400;
+}
+.mensaje-error p{
+    text-align: center;
+}
+.mensaje-error p span{
+    color: #6433DB;
+    font-weight: 450;
+    cursor: pointer;
+}
+.mensaje-error .botones{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+.mensaje-error button{
+    color: #000;
+    width: 150px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    background: #6433D8;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 15px;
+    cursor: pointer;
+    margin-left: -20px;
+}
+.mensaje-error .boton2{
+    margin-left: 15px;
+}
+.mensaje-error button:hover{
+    background: linear-gradient(15deg, #B95CE4, #4F29CC);
+}
