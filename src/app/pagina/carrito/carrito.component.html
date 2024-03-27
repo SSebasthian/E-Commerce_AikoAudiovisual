@@ -7,7 +7,7 @@
       <span class="left" *ngIf="totalProductosEnCarrito > 0">
         <p>Hay <span>{{ totalProductosEnCarrito }}</span> productos en el carrito.</p>
       </span>
-      <span class="right">
+      <span class="right" *ngIf="carritoService.carrito.length > 0">
         <p><span>Total:</span> ${{ totalPagar }}</p>
       </span>
     </div>
@@ -52,11 +52,13 @@
           </tbody>
       </table>
   </div>
-  <div *ngIf="carritoService.carrito.length === 0">
-    <p>No hay productos en el carrito.</p>
+  <div class="sinProductos" *ngIf="carritoService.carrito.length === 0">
+    <p><span>No hay productos</span> en el carrito.</p>
+    <br><br>
+    <a [routerLink]="['/producto']">Seguir Comprando</a>
   </div>
 </div>
-<div class="infoProducto">
+<div class="infoProducto" *ngIf="carritoService.carrito.length > 0">
   <div class="contenido-infoproducto">
     <span class="left" *ngIf="totalProductosEnCarrito > 0">
       <p>Hay <span>{{ totalProductosEnCarrito }}</span> productos en el carrito.</p>

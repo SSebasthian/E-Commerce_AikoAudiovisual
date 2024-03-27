@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { CarritoService } from '../../arquitectura/servicio/carrito.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-carrito',
@@ -10,7 +11,8 @@ import { CarritoService } from '../../arquitectura/servicio/carrito.service';
   imports: [
     CommonModule,
     MatIcon,
-    FormsModule
+    FormsModule,
+    RouterLink
   ],
   templateUrl: './carrito.component.html',
   styleUrl: './carrito.component.css'
