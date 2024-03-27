@@ -61,7 +61,11 @@ export class CarritoService {
       }
     }
 
-    
+    obtenerCantidadTotalProductosEnCarrito(): number {
+      const total = this.carrito.reduce((total, item) => total + item.cantidad, 0);
+      console.log('Cantidad total de productos en carrito:', total);
+      return total;
+    }
 
 }
 
