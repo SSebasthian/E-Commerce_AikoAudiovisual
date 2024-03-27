@@ -1,0 +1,97 @@
+.pagContacto{
+    width: 85%;
+    margin: auto;
+    padding: 50px;
+}
+.pagContacto .contenido{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
+    width: 60%;
+    margin: auto;
+}
+.pagContacto h1{
+    width: 40%;
+    color: #9500F4;
+    font-size: 27px;
+    font-weight: 600;
+    text-align: center;
+    margin: auto;
+}
+.pagContacto .contenido img{
+    width: 70%;
+    transform: scaleX(-1);
+    position: relative;
+    margin-left: 30px;
+}
+.pagContacto .contenido .texto{
+    width: 100%;
+    margin: auto;
+    padding: 10px;
+    text-align: justify;
+}
+.pagContacto .contenido h2{
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+.pagContacto .contenido .texto p{
+    font-size: 19px;
+    font-weight: 400;
+    padding: 10px;
+}
+.contenidoForm{
+    height: 200px;
+}
+.contenidoForm h1{
+    text-align: center;
+    color: #9500F4;
+    font-size: 27px;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 1190px){
+    .pagContacto h1{
+        width: 60%;
+    }
+    .pagContacto .contenido{
+        width: 70%;
+        
+    }
+}
+@media screen and (max-width: 920px){
+    .pagContacto h1{
+        width: 80%;
+    }
+    .pagContacto .contenido{
+        width: 80%;
+    }
+    .pagContacto .contenido img{
+        width: 80%;
+        margin-left: 0;
+    }
+    .pagContacto .contenido .texto{
+        width: 120%;
+    }
+}
+@media screen and (max-width: 700px){
+    .pagContacto h1{
+        margin-top: 100px;
+    }
+    .pagContacto .contenido img{
+        width: 85%;
+        margin-top: 20%;
+    }
+}
+@media screen and (max-width: 580px){
+    .pagContacto .contenido{
+        grid-template-columns: 1fr;
+    }
+    .pagContacto .contenido .texto{
+        width: 100%;
+        margin: auto;
+        padding: 10px;
+        text-align: justify;
+    }
+    
+}
