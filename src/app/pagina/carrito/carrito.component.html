@@ -1,6 +1,7 @@
 <div *ngIf="carritoService.carrito.length > 0">
     <h1>
         <mat-icon>card_travel</mat-icon> BOLSA DE COMPRAS
+        <p><span>Total:</span> ${{ totalPagar }}</p>
       </h1>
     <ul>
       <li *ngFor="let productoCarrito of carritoService.carrito">
