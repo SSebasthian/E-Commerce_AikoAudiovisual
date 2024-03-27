@@ -10,6 +10,7 @@
           <p>Cantidad: {{ productoCarrito.cantidad }}</p>
           <p>Precio unitario: $ {{ productoCarrito.producto.precio }}</p>
           <p>Precio total: $ {{ productoCarrito.producto.precio * productoCarrito.cantidad }}</p>
+          <button *ngIf="productoCarrito.producto.id" (click)="eliminarDelCarrito(productoCarrito.producto.id)">Eliminar</button>
         </div>
       </li>
     </ul>

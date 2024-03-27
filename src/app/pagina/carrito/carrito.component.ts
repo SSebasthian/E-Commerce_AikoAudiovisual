@@ -25,5 +25,8 @@ export class CarritoComponent {
     this.carritoService.cargarCarritoLocalStorage();
   }
 
+  eliminarDelCarrito(productoId: string) {
+    this.carritoService.eliminarDelCarrito(productoId);
+  }
   
 }
