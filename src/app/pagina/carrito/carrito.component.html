@@ -1,26 +1,69 @@
-<div *ngIf="carritoService.carrito.length > 0">
-    <h1>
-        <mat-icon>card_travel</mat-icon> BOLSA DE COMPRAS
-        <p><span>Total:</span> ${{ totalPagar }}</p>
+ 
+  <div class="infoProducto">
+    <h1 class="titulo">
+      <mat-icon>card_travel</mat-icon> BOLSA DE COMPRAS
+    </h1>
+    <div class="contenido-infoproducto">
+      <span class="left" *ngIf="totalProductosEnCarrito > 0">
         <p>Hay <span>{{ totalProductosEnCarrito }}</span> productos en el carrito.</p>
-      </h1>
-    <ul>
-      <li *ngFor="let productoCarrito of carritoService.carrito">
-        <div>
-          <img [src]="productoCarrito.producto.imagen" alt="{{ productoCarrito.producto.titulo }}" width="200">
-          <h3>{{ productoCarrito.producto.titulo }}</h3>
-          <div class="contador">
-            <button (click)="disminuirCantidad(productoCarrito)">-</button>
-            <input type="number" readonly [(ngModel)]="productoCarrito.cantidad" min="1">
-            <button (click)="aumentarCantidad(productoCarrito)">+</button>
-          </div>
-          <p>Precio unitario: $ {{ productoCarrito.producto.precio }}</p>
-          <p>Precio total: $ {{ productoCarrito.producto.precio * productoCarrito.cantidad }}</p>
-          <button *ngIf="productoCarrito.producto.id" (click)="eliminarDelCarrito(productoCarrito.producto.id)">Eliminar</button>
-        </div>
-      </li>
-    </ul>
+      </span>
+      <span class="right">
+        <p><span>Total:</span> ${{ totalPagar }}</p>
+      </span>
+    </div>
+  </div>
+  <div class="carrito">
+    <div class="contenidoCarrito" *ngIf="carritoService.carrito.length > 0">
+      <table>
+          <thead>
+              <tr>
+                  <th>Titulo</th>
+                  <th>Imagen</th>
+                  <th>Cantidad</th>
+                  <th>Precio Unitario</th>
+                  <th>Precio Total</th>
+              </tr>
+          </thead>
+          <tbody *ngFor="let productoCarrito of carritoService.carrito">
+              <tr>
+                  <td>
+                    {{ productoCarrito.producto.titulo }}
+                  </td>
+                  <td>
+                    <img [src]="productoCarrito.producto.imagen" alt="{{ productoCarrito.producto.titulo }}">
+                  </td>
+                  <td>
+                    <div class="contador">
+                      <button (click)="disminuirCantidad(productoCarrito)">-</button>
+                      <input type="number" readonly [(ngModel)]="productoCarrito.cantidad" min="1">
+                      <button (click)="aumentarCantidad(productoCarrito)">+</button>
+                    </div>
+                  </td>
+                  <td>
+                    {{ productoCarrito.producto.precio }}
+                  </td>
+                  <td>
+                    {{ productoCarrito.producto.precio * productoCarrito.cantidad }}
+                  </td>
+                  <td>
+                    <mat-icon class="botonEliminar" *ngIf="productoCarrito.producto.id" (click)="eliminarDelCarrito(productoCarrito.producto.id)">delete_forever</mat-icon>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
   </div>
   <div *ngIf="carritoService.carrito.length === 0">
     <p>No hay productos en el carrito.</p>
   </div>
+</div>
+<div class="infoProducto">
+  <div class="contenido-infoproducto">
+    <span class="left" *ngIf="totalProductosEnCarrito > 0">
+      <p>Hay <span>{{ totalProductosEnCarrito }}</span> productos en el carrito.</p>
+    </span>
+    <span class="right">
+      <p><span>Total:</span> ${{ totalPagar }}</p>
+    </span>
+  </div>
+</div>
+<br><br>
