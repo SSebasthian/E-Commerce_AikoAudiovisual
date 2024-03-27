@@ -7,7 +7,11 @@
         <div>
           <img [src]="productoCarrito.producto.imagen" alt="{{ productoCarrito.producto.titulo }}" width="200">
           <h3>{{ productoCarrito.producto.titulo }}</h3>
-          <p>Cantidad: {{ productoCarrito.cantidad }}</p>
+          <div class="contador">
+            <button (click)="disminuirCantidad(productoCarrito)">-</button>
+            <input type="number" readonly [(ngModel)]="productoCarrito.cantidad" min="1">
+            <button (click)="aumentarCantidad(productoCarrito)">+</button>
+          </div>
           <p>Precio unitario: $ {{ productoCarrito.producto.precio }}</p>
           <p>Precio total: $ {{ productoCarrito.producto.precio * productoCarrito.cantidad }}</p>
           <button *ngIf="productoCarrito.producto.id" (click)="eliminarDelCarrito(productoCarrito.producto.id)">Eliminar</button>

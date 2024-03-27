@@ -29,4 +29,23 @@ export class CarritoComponent {
     this.carritoService.eliminarDelCarrito(productoId);
   }
   
+  aumentarCantidad(productoCarrito: any) {
+    if (productoCarrito.cantidad < productoCarrito.producto.stock) {
+      productoCarrito.cantidad++;
+      this.carritoService.guardarCarritoLocalStorage(); // Guardar en localStorage
+      
+
+
+    } else {
+      alert('Llegaste al Limite de existecia disponible');
+    }
+  }
+
+  disminuirCantidad(productoCarrito: any) {
+    if (productoCarrito.cantidad > 1) {
+      productoCarrito.cantidad--;
+      this.carritoService.guardarCarritoLocalStorage(); // Guardar en localStorage
+      
+    }
+  }
 }
